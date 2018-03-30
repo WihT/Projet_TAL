@@ -1,0 +1,22 @@
+	undefined
+Hmm...
+Yes...
+Tell me more...
+I see...
+Interesting...
+Continue...
+
+	bye
+See you!
+Bye!
+GoodBye!
+
+	hello
+Hello!
+Hey!
+Hi!
+
+	family
+Do you think family is important?
+Have ever lost someone?
+Have you ever had issues with your parents?
