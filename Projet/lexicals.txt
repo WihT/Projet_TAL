@@ -1,6 +1,5 @@
-	bye
-goodbye
 bye
+goodbye
 
 	family
 child
@@ -55,8 +54,7 @@ weapon
 theory
 nuclear
 
-	aliens
-alien
+    alien
 ufo
 xcom
 stranger
@@ -66,8 +64,7 @@ flying
 roswell
 1947
 
-	reptilians
-reptilian
+    reptilian
 reptile
 lizard
 turtle
@@ -75,8 +72,7 @@ tortoise
 iguana
 dinosaur
 
-	illuminatis
-illuminati
+    illuminati
 triangle
 pyramid
 eye
@@ -88,21 +84,8 @@ private
 theory
 illuminati
 reptilian
-september
-eleven
-11
-2001
 wtc
-world
-trade
-center
-51
 zone
 tchernobyl
 nuclear
 roswell
-
-
-
-
-
