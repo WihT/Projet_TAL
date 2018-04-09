@@ -1,9 +1,4 @@
-	bye
-See you!
-Bye!
-GoodBye!
-
-	family
+family
 Do you think family is important?
 Have ever lost someone?
 Have you ever had issues with your parents?

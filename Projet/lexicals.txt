@@ -1,7 +1,4 @@
-bye
-goodbye
-
-	family
+family
 child
 children
 father
@@ -10,6 +7,8 @@ dad
 mother
 mommy
 mom
+brother
+sister
 son
 daughter
 parents
@@ -38,7 +37,6 @@ queen
 minister
 government
 zone
-51
 
 	science
 scientist
@@ -54,7 +52,7 @@ weapon
 theory
 nuclear
 
-    alien
+	alien
 ufo
 xcom
 stranger
@@ -64,7 +62,7 @@ flying
 roswell
 1947
 
-    reptilian
+	reptilian
 reptile
 lizard
 turtle
@@ -72,7 +70,7 @@ tortoise
 iguana
 dinosaur
 
-    illuminati
+	illuminati
 triangle
 pyramid
 eye

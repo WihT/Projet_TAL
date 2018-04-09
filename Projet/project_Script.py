@@ -20,20 +20,33 @@ def ansMode1() :
         5 : "Yes...",
     }[x]
 
-def ansMode2(answer) :
+def ansMode2(answer, lexicals) :
 	ansWords = re.split("[ .,?!/()]+", answer)
 	print(ansWords)
+	for wAns in ansWords :
+		for lex in lexicals :
+			for wLex in lex :
+				if matchLex(wAns, wLex) :
+					print("I recognized the word " + wLex + " from lexical \"" + lex[0] + "\"")
 	return
+	
+def matchLex(wAns, wLex) :
+	if wAns.endswith("s") :
+		if wAns.endswith("ies") :
+			wAns = wAns[:-3] + "y"
+		else :
+			wAns = wAns[:-1]
+	return wAns == wLex
 
-def bot(answer) : 
+def bot(answer, lexicals) : 
 	if (answer == "Bye") or (answer == "bye") :
 		print("Bob : See you !")
 		return False
 	#print("Bob : "+ansMode1())
-	ansMode2(answer)
+	ansMode2(answer, lexicals)
 	return True
 
-#main
+#  MAIN DEFINITION
 with open("lexicals.txt","r") as filepointer :
 	# lecture du fichier de champs lexicaux
 	content = filepointer.read()
@@ -43,10 +56,10 @@ with open("lexicals.txt","r") as filepointer :
 		lexicals.append(re.split("\n+", lex))
 
 del lexicals[len(lexicals)-1][len(lexicals[len(lexicals)-1])-1]
-print(lexicals)
+#print(lexicals)
 
 print("Bob : Hello")
 while True:
-    if bot(input("You : ")) == False :
+    if bot(input("You : "), lexicals) == False :
         break
     
