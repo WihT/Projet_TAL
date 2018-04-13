@@ -23,16 +23,33 @@ def ansMode1() :
 
 def ansMode2(answer, lexicals, currSubj, botAnswers) :
 	ansWords = re.split("[ .,?!/()]+", answer)
-	print(ansWords)
+	#print(ansWords)
 	for wAns in ansWords :
 		for iLex in range(len(lexicals)) :
 			for wLex in lexicals[iLex] :
 				if matchLex(wAns, wLex) :
-					print("I recognized the word " + wLex + " from lexical \"" + lexicals[iLex][0] + "\"")
+					#print("I recognized the word " + wLex + " from lexical \"" + lexicals[iLex][0] + "\"")
 					currSubj[iLex] += 1
 	maxSubj = currSubj.index(np.amax(currSubj))
-	print ("Bob : " + botAnswers[maxSubj][random.randint(0, len(botAnswers[maxSubj])-1)])
-	return
+
+	global prevChoice
+	x = random.randint(0, len(botAnswers[maxSubj])-1)
+	while prevChoice == x :
+		x = random.randint(0, len(botAnswers[maxSubj])-1)
+	prevChoice = x
+
+	mode2 = False
+
+	for i in range(0,len(currSubj)-1) :
+		if currSubj[i] != 0 :
+			mode2 = True
+			break
+
+	if mode2 == False :
+		return False
+	else :
+		print ("Bob : " + botAnswers[maxSubj][x])
+		return
 	
 def matchLex(wAns, wLex) :
 	if wAns.endswith("s") :
@@ -46,8 +63,9 @@ def bot(answer, lexicals, currSubj, botAnswers) :
 	if (answer == "Bye") or (answer == "bye") :
 		print("Bob : See you !")
 		return False
-	#print("Bob : "+ansMode1())
-	ansMode2(answer, lexicals, currSubj, botAnswers)
+	
+	if ansMode2(answer, lexicals, currSubj, botAnswers) == False :
+		print("Bob : "+ansMode1())
 	return True
 
 #  MAIN DEFINITION
@@ -84,4 +102,4 @@ while True:
 		currSubj[iSubj] /= 2;
 		if (currSubj[iSubj] < 1) :
 			currSubj[iSubj] = 0;
-	print(currSubj)
+	#print(currSubj)
