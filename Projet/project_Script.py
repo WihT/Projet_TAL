@@ -49,7 +49,11 @@ def ansMode2(answer, lexicals, currSubj, botAnswers) :
 		return False
 	else :
 		print ("Bob : " + botAnswers[maxSubj][x])
-		return
+		return True
+
+def ansMode3(answer, lexicals, currSubj, botAnswers) :
+
+	return False
 	
 def matchLex(wAns, wLex) :
 	if wAns.endswith("s") :
@@ -62,10 +66,12 @@ def matchLex(wAns, wLex) :
 def bot(answer, lexicals, currSubj, botAnswers) :
 	if (answer == "Bye") or (answer == "bye") :
 		print("Bob : See you !")
-		return False
-	
-	if ansMode2(answer, lexicals, currSubj, botAnswers) == False :
-		print("Bob : "+ansMode1())
+		return True
+
+
+	if ansMode3(answer, lexicals, currSubj, botAnswers) == False :
+		if ansMode2(answer, lexicals, currSubj, botAnswers) == False :
+			print("Bob : "+ansMode1())
 	return True
 
 #  MAIN DEFINITION
@@ -95,6 +101,7 @@ del botAnswers[len(botAnswers)-1][len(botAnswers[len(botAnswers)-1])-1]
 currSubj = [0] * len(lexicals);
 
 print("Bob : Hello")
+print("Bob : Please tell me something about you.")
 while True:
 	if bot(input("You : "), lexicals, currSubj, botAnswers) == False :
 		break
