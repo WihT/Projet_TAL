@@ -1,30 +1,30 @@
 family
 Do you think family is important?
-Have ever lost someone?
+Have you ever lost someone?
 Have you ever had issues with your parents?
 
-    authority
+	authority
 Do you think the government always tell us the truth?
 Have you ever had issues with authorities?
 
-    science
+	science
 Do you think science is always a good thing?
 What's your opinion about science in general?
 Do you always believe what scientists say?
 
-    alien
+	alien
 I don't think we are alone in this universe. Do you?
 I guess sometimes we can see the consequences of things that are not coming from our planet.
 
-    reptilian
+	reptilian
 You seem to like reptiles, don't you?
 Do you think we really are the dominant species on our planet?
 
-    illuminati
+	illuminati
 Don't you find it strange, all the triangles there are everywhere?
-What if that was somehow linked to the illuminatis?
+What if that was somehow linked to the illuminati?
 
-    conspiracy
+	conspiracy
 One more thing we are not told the truth about. What do you know about zone 51?
 There are lots of existing theories, but what is yours about all of that?
 Looks like someone has something to hide, don't you think?
