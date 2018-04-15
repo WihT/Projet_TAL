@@ -4,24 +4,23 @@ import re
 import argparse
 import numpy as np
 
-prevChoice = 0
-
-def ansMode1() :
-	global prevChoice
-	x = random.randint(0,1024)%6
-	while prevChoice == x :
-		x = random.randint(0,1024)%6
-	prevChoice = x
-	return {
+def ansMode1(prevChoice) :
+	choice = random.randint(0, 4)
+	if choice >= prevChoice :
+		choice += 1
+	str = {
 		0 : "Interesting...",
         1 : "Hmm...",
         2 : "So that's your opinion...",
         3 : "Continue...",
 		4 : "Tell me more...",
         5 : "Yes...",
-    }[x]
+    }[choice]
+	print ("Bob : " + str)
+	return choice
 
-def ansMode2(answer, lexicals, currSubj, botAnswers) :
+
+def ansMode2(answer, lexicals, currSubj, botAnswers, prevChoice) :
 	ansWords = re.split("[ .,?!/()]+", answer)
 	#print(ansWords)
 	for wAns in ansWords :
@@ -30,31 +29,33 @@ def ansMode2(answer, lexicals, currSubj, botAnswers) :
 				if matchLex(wAns, wLex) :
 					#print("I recognized the word " + wLex + " from lexical \"" + lexicals[iLex][0] + "\"")
 					currSubj[iLex] += 1
+					
+	#print(currSubj)
 	maxSubj = currSubj.index(np.amax(currSubj))
 
-	global prevChoice
-	x = random.randint(0, len(botAnswers[maxSubj])-1)
-	while prevChoice == x :
-		x = random.randint(0, len(botAnswers[maxSubj])-1)
-	prevChoice = x
+	choice = random.randint(0, len(botAnswers[maxSubj])-2)
+	if choice >= prevChoice :
+		choice += 1
+	prevChoice = choice
 
 	mode2 = False
 
-	for i in range(0,len(currSubj)-1) :
+	for i in range(0, len(currSubj)-1) :
 		if currSubj[i] != 0 :
 			mode2 = True
 			break
 
 	if mode2 == False :
-		return False
+		return -1
 	else :
-		print ("Bob : " + botAnswers[maxSubj][x])
-		return True
+		print ("Bob : " + botAnswers[maxSubj][choice])
+		return choice
 
-def ansMode3(answer, lexicals, currSubj, botAnswers) :
-
-	return False
+		
+def ansMode3(answer, lexicals, currSubj, botAnswers, prevChoice) :
+	return -1
 	
+
 def matchLex(wAns, wLex) :
 	if wAns.endswith("s") :
 		if wAns.endswith("ies") :
@@ -63,19 +64,21 @@ def matchLex(wAns, wLex) :
 			wAns = wAns[:-1]
 	return wAns == wLex
 
-def bot(answer, lexicals, currSubj, botAnswers) :
+	
+def bot(answer, lexicals, currSubj, botAnswers, prevChoice) :
 	if (answer == "Bye") or (answer == "bye") :
 		print("Bob : See you !")
-		return True
+		return -1
+	choice = ansMode3(answer, lexicals, currSubj, botAnswers, prevChoice)
+	if  choice == -1 :
+		choice = ansMode2(answer, lexicals, currSubj, botAnswers, prevChoice)
+		if choice == -1 :
+			choice = ansMode1(prevChoice)
+	return choice
 
-
-	if ansMode3(answer, lexicals, currSubj, botAnswers) == False :
-		if ansMode2(answer, lexicals, currSubj, botAnswers) == False :
-			print("Bob : "+ansMode1())
-	return True
-
+	
 #  MAIN DEFINITION
-with open("lexicals.txt","r") as filepointer :
+with open("lexicals2.txt","r") as filepointer :
 	# lecture du fichier de champs lexicaux
 	content = filepointer.read()
 	tmp = re.split("\n\n\t+", content)
@@ -86,7 +89,7 @@ with open("lexicals.txt","r") as filepointer :
 del lexicals[len(lexicals)-1][len(lexicals[len(lexicals)-1])-1]
 #print(lexicals)
 
-with open("answers.txt","r") as filepointer :
+with open("answers2.txt","r") as filepointer :
 	# lecture du fichier de champs lexicaux
 	content = filepointer.read()
 	tmp = re.split("\n\n\t+", content)
@@ -98,15 +101,18 @@ with open("answers.txt","r") as filepointer :
 del botAnswers[len(botAnswers)-1][len(botAnswers[len(botAnswers)-1])-1]
 #print(botAnswers)
 
-currSubj = [0] * len(lexicals);
+currSubj = [0] * len(lexicals)
+prevChoice = 0
 
 print("Bob : Hello")
 print("Bob : Please tell me something about you.")
 while True:
-	if bot(input("You : "), lexicals, currSubj, botAnswers) == False :
+	choice = bot(input("You : "), lexicals, currSubj, botAnswers, prevChoice)
+	if  choice == -1 :
 		break
 	for iSubj in range(len(currSubj)) :
 		currSubj[iSubj] /= 2;
 		if (currSubj[iSubj] < 1) :
 			currSubj[iSubj] = 0;
+	prevChoice = choice
 	#print(currSubj)

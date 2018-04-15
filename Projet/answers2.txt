@@ -1,0 +1,63 @@
+family
+Do you think family is important?
+Have you ever lost someone?
+Have you ever had issues with your parents?
+
+	authority
+Do you think the government always tells us the truth?
+Have you ever had issues with authorities?
+
+	history
+You know most of the history as we know it is pure invention, right?
+What's your opinion about history in general?
+Do you always believe what historians say?
+
+	science
+Do you think science is always a good thing?
+What's your opinion about science in general?
+Do you always believe what scientists say?
+
+	alien
+I don't think we are alone in this universe. Do you?
+Once again, we are probably seeing the consequences of things that are not coming from our planet.
+Do you think there are extraterrestrials living within human society?
+
+	reptilian
+You seem to like reptiles, don't you?
+You wouldn't believe all the things that are living in the undergrounds of our own planet...
+Have you ever wondered if someone in front of you was a reptilian?
+
+	animal
+Do you think we really are the dominant species on our planet?
+What is your opinion about experiments on animals?
+Do you have a favorite animal?
+
+	money
+Anyway, money is just a political thing, isn't it?
+Don't you think this society attach too much importance to money?
+Do you consider yourself to be a materialistic person?
+
+	illuminati
+Don't you find it strange, all the triangles there are everywhere?
+What if that was somehow linked to the illuminati?
+
+	conspiracy
+One more thing we are not told the truth about. What do you know about zone 51?
+There are lots of existing theories, but what is yours about all of that?
+Looks like someone has something to hide, don't you think?
+
+	logic
+That doesn't seem very logical to me...
+Could you explain that?
+An interesting reasoning, but maybe biased.
+
+	chance
+Coincidence ? I don't think so...
+Do you believe in fate ?
+I don't believe in chance. Everything happens for a reason.
+
+	math
+But you know, numbers can lie too...
+That's a very formated reasoning.
+Sorry, maths aren't my thing...
+Do you think maths are taught the right way to people?
