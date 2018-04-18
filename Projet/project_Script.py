@@ -3,7 +3,7 @@ import random
 import re
 import argparse
 import numpy as np
-
+    
 def ansMode1(prevChoice) :
 	choice = random.randint(0, 4)
 	if choice >= prevChoice :
@@ -21,39 +21,52 @@ def ansMode1(prevChoice) :
 
 
 def ansMode2(answer, lexicals, currSubj, botAnswers, prevChoice) :
-	ansWords = re.split("[ .,?!/()]+", answer)
+    ansWords = re.split("[ .,?!/()]+", answer)
 	#print(ansWords)
-	for wAns in ansWords :
-		for iLex in range(len(lexicals)) :
-			for wLex in lexicals[iLex] :
-				if matchLex(wAns, wLex) :
+    for wAns in ansWords :
+        for iLex in range(len(lexicals)) :
+            for wLex in lexicals[iLex] :
+                if matchLex(wAns, wLex) :
 					#print("I recognized the word " + wLex + " from lexical \"" + lexicals[iLex][0] + "\"")
-					currSubj[iLex] += 1
-					
+                    currSubj[iLex] += 1
+    
+   
 	#print(currSubj)
-	maxSubj = currSubj.index(np.amax(currSubj))
+    maxSubj = currSubj.index(np.amax(currSubj))
+    
 
-	choice = random.randint(0, len(botAnswers[maxSubj])-2)
-	if choice >= prevChoice :
-		choice += 1
-	prevChoice = choice
+    choice = random.randint(0, len(botAnswers[maxSubj])-2)
+    if choice >= prevChoice :
+        choice += 1
+        prevChoice = choice
 
-	mode2 = False
+    mode2 = False
 
-	for i in range(0, len(currSubj)-1) :
-		if currSubj[i] != 0 :
-			mode2 = True
-			break
+    for i in range(0, len(currSubj)-1) :
+        if currSubj[i] != 0 :
+            mode2 = True
+            break
+        
+        if mode2 == False :
+            return -1
+        else :
+            print ("Bob : " + botAnswers[maxSubj][choice])
+            return choice
 
-	if mode2 == False :
-		return -1
-	else :
-		print ("Bob : " + botAnswers[maxSubj][choice])
-		return choice
+def checkYes(answer) :
+    for word in answer :
+        if word.lower().startswith("ye") :
+            return True
+        else :
+            if word.lower() == "affirmative" :
+                return True
+            else : 
+                return False
 
-		
+
 def ansMode3(answer, lexicals, currSubj, botAnswers, prevChoice) :
-	return -1
+   
+   return -1
 	
 
 def matchLex(wAns, wLex) :
