@@ -21,37 +21,33 @@ def ansMode1(prevChoice) :
 
 
 def ansMode2(answer, lexicals, currSubj, botAnswers, prevChoice) :
-    ansWords = re.split("[ .,?!/()]+", answer)
-	#print(ansWords)
-    for wAns in ansWords :
-        for iLex in range(len(lexicals)) :
-            for wLex in lexicals[iLex] :
-                if matchLex(wAns, wLex) :
+	for wAns in answer :
+		for iLex in range(len(lexicals)) :
+			for wLex in lexicals[iLex] :
+				if matchLex(wAns, wLex) :
 					#print("I recognized the word " + wLex + " from lexical \"" + lexicals[iLex][0] + "\"")
-                    currSubj[iLex] += 1
+					currSubj[iLex] += 1
     
-   
-	#print(currSubj)
-    maxSubj = currSubj.index(np.amax(currSubj))
-    
+	maxSubj = currSubj.index(np.amax(currSubj))
+	
+	choice = random.randint(0, len(botAnswers[maxSubj])-2)
 
-    choice = random.randint(0, len(botAnswers[maxSubj])-2)
-    if choice >= prevChoice :
-        choice += 1
-        prevChoice = choice
+	if choice >= prevChoice :
+		choice += 1
+	prevChoice = choice
 
-    mode2 = False
+	mode2 = False
 
-    for i in range(0, len(currSubj)-1) :
-        if currSubj[i] != 0 :
-            mode2 = True
-            break
+	for i in range(0, len(currSubj)-1) :
+		if currSubj[i] != 0 :
+			mode2 = True
+			break
         
-        if mode2 == False :
-            return -1
-        else :
-            print ("Bob : " + botAnswers[maxSubj][choice])
-            return choice
+	if mode2 == False :
+		return -1
+	else :
+		print ("Bob : " + botAnswers[maxSubj][choice])
+		return choice
 
 def checkYes(answer) :
     for word in answer :
@@ -65,7 +61,8 @@ def checkYes(answer) :
 
 
 def ansMode3(answer, lexicals, currSubj, botAnswers, prevChoice) :
-   
+   if checkYes(answer) :
+       print("*Bob writes it in his notebook.*")
    return -1
 	
 
@@ -82,9 +79,18 @@ def bot(answer, lexicals, currSubj, botAnswers, prevChoice) :
 	if (answer == "Bye") or (answer == "bye") :
 		print("Bob : See you !")
 		return -1
-	choice = ansMode3(answer, lexicals, currSubj, botAnswers, prevChoice)
+    
+	ansWords = re.split("[ .,?!/()]+", answer)
+	
+    
+   
+	#print(currSubj)
+	
+    
+	choice = ansMode3(ansWords, lexicals, currSubj, botAnswers, prevChoice)
+	
 	if  choice == -1 :
-		choice = ansMode2(answer, lexicals, currSubj, botAnswers, prevChoice)
+		choice = ansMode2(ansWords, lexicals, currSubj, botAnswers, prevChoice)
 		if choice == -1 :
 			choice = ansMode1(prevChoice)
 	return choice
