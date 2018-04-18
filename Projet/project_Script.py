@@ -2,6 +2,7 @@ import os
 import random
 import re
 import argparse
+import sys
 import numpy as np
     
 def ansMode1(prevChoice) :
@@ -59,12 +60,24 @@ def checkYes(answer) :
             else : 
                 return False
 
-
-def ansMode3(answer, lexicals, currSubj, botAnswers, prevChoice) :
+def checkNo(answer) :
+    for word in answer :
+        if word.lower().startswith("no") :
+            return True
+        else :
+            if word.lower() == "negative" :
+                return True
+            else : 
+                return False
+def ansMode3(answer, lexicals, currSubj, botAnswers, prevChoice, sympathy) :
    if checkYes(answer) :
        print("*Bob writes it in his notebook.*")
-   return -1
-	
+       sympathy += 1
+   if checkNo(answer) :
+       print("*Bob writes it in his notebook.*")
+       sympathy -= 1
+   
+   return -1, sympathy
 
 def matchLex(wAns, wLex) :
 	if wAns.endswith("s") :
@@ -75,25 +88,25 @@ def matchLex(wAns, wLex) :
 	return wAns == wLex
 
 	
-def bot(answer, lexicals, currSubj, botAnswers, prevChoice) :
+def bot(answer, lexicals, currSubj, botAnswers, prevChoice, sympathy) :
 	if (answer == "Bye") or (answer == "bye") :
 		print("Bob : See you !")
 		return -1
-    
-	ansWords = re.split("[ .,?!/()]+", answer)
 	
-    
+	ansWords = re.split("[ .,?!/()]+", answer)
+
    
 	#print(currSubj)
 	
     
-	choice = ansMode3(ansWords, lexicals, currSubj, botAnswers, prevChoice)
-	
+	choice, sympathy = ansMode3(ansWords, lexicals, currSubj, botAnswers, prevChoice, sympathy)
+	if sympathy <= -5 :
+		return choice, sympathy
 	if  choice == -1 :
 		choice = ansMode2(ansWords, lexicals, currSubj, botAnswers, prevChoice)
 		if choice == -1 :
 			choice = ansMode1(prevChoice)
-	return choice
+	return choice, sympathy
 
 	
 #  MAIN DEFINITION
@@ -119,16 +132,21 @@ with open("answers2.txt","r") as filepointer :
 		
 del botAnswers[len(botAnswers)-1][len(botAnswers[len(botAnswers)-1])-1]
 #print(botAnswers)
-
+sympathy = 0
 currSubj = [0] * len(lexicals)
 prevChoice = 0
 
 print("Bob : Hello")
 print("Bob : Please tell me something about you.")
 while True:
-	choice = bot(input("You : "), lexicals, currSubj, botAnswers, prevChoice)
+	choice, sympathy = bot(input("You : "), lexicals, currSubj, botAnswers, prevChoice, sympathy)
+	if sympathy <= -5 :
+		print("You monster !")
+		print("*Bob run away from you*")
+		break
 	if  choice == -1 :
 		break
+	
 	for iSubj in range(len(currSubj)) :
 		currSubj[iSubj] /= 2;
 		if (currSubj[iSubj] < 1) :
