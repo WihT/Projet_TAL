@@ -81,6 +81,7 @@ drug
 med
 medic
 medication
+doctor
 weapon
 theory
 theoretic

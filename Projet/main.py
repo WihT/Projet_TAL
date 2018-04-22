@@ -7,13 +7,13 @@ import numpy as np
 from lexicalField import LexField
     
 def ansMode1(prevChoice) :
-	choice = random.randint(0, 4)
+	choice = random.randint(0, 3)
 	if choice >= prevChoice :
 		choice += 1
 	str = {
 		0 : "Interesting...",
         1 : "Hmm...",
-        3 : "Continue.",
+        2 : "Continue.",
 		3 : "Tell me more.",
         4 : "I see...",
     }[choice]
@@ -81,8 +81,7 @@ def ansMode3(answer, lexFields, currSubj, prevChoice, sympathy) :
 def matchLex(wAns, wLex) :
 	wAns = wAns.lower()
 	if wLex.endswith("_") : # That means the words must be compared as they are
-		wLex = wAns[:-1]
-		return wAns == wLex
+		return wAns == wLex[:-1]
 	if wAns.endswith("s") :
 		if wAns.endswith("ies") :
 			wAns = wAns[:-3] + "y"
