@@ -57,8 +57,10 @@ historic
 historian
 king
 queen
+kingdom
 cavemen
 fossil
+discovery
 revolution
 country
 heritage
@@ -94,6 +96,7 @@ virus_
 evolve
 evolved
 evolution
+discovery
 
 Do you think science is always a good thing?
 What's your opinion about science in general?
@@ -105,15 +108,16 @@ extraterrestrial
 planet
 space
 ufo
+unidentified
+flying saucer
 xcom
 unknown
 stranger
 abduct
 abducted
 abduction
-flying
 roswell
-zone 51
+area 51
 
 I don't think we are alone in this universe. Do you?
 Do you think there are extraterrestrials living within human society?
@@ -145,7 +149,12 @@ dog
 cat
 cow
 horse
+bird
+dolphin
+fish
 insect
+bee
+ant
 domesticate
 domesticated
 wild
@@ -245,8 +254,8 @@ likely
 coincidence
 statistic
 
-Coincidence ? I don't think so...
-Do you believe in fate ?
+Coincidence? I don't think so...
+Do you believe in fate?
 I don't believe in chance. Everything happens for a reason.
 
 	math
@@ -261,3 +270,13 @@ But you know, numbers can lie too...
 That's a very formated reasoning.
 Sorry, maths aren't my thing...
 Do you think maths are taught the right way to people?
+
+	bob
+you
+your
+yours
+yourself
+
+Haha, I'm not such an interesting guy. Let's talk about what's going on in this world!
+Maybe you are doing self-projection.
+I don't know... what about you?
