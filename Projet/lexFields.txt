@@ -87,7 +87,6 @@ medic
 medication
 medicine
 doctor
-weapon
 theory
 theoretic
 energy
@@ -300,8 +299,8 @@ cloudbuster
 cloud
 plane
 aircraft
+weather
 wilhelm reich
-weather modification
 solar radiation
 
 Can you imagine what would do a government able to control weather?
@@ -319,6 +318,8 @@ virus
 vaccine
 bacteria
 radiation
+weapon
+warfare
 
 Authorities should protect populations against that, instead of encouraging it.
 Have you ever had... unexplained health issues? 
