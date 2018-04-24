@@ -41,8 +41,9 @@ class LexField:
 	# so "reptilian" lexField is a parent of "reptile" lexField
 	def increment(self, value):
 		self.pertinent += value
-		for subj in self.parents:
-			LexField.subjects[subj].increment(value*0.6)
+		if value > 0.1 :
+			for subj in self.parents:
+				LexField.subjects[subj].increment(value*0.6)
 	
 	# We replace all of the parents names by their IDs, in order to save time later
 	@staticmethod
@@ -55,5 +56,7 @@ class LexField:
 					if subjs[iChild].parents[iParent][1:] == subjs[iSubj].keyWords[0]:
 						idList.append(iSubj)
 			subjs[iChild].parents = idList
-			#print(subjs[iChild])
+			
+			
+	
 			
