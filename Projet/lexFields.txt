@@ -48,6 +48,7 @@ queen
 minister
 government
 white house
+federal
 
 Do you think the government always tells us the truth?
 Have you ever had issues with authorities?
@@ -75,6 +76,7 @@ What's your opinion about history in general?
 Do you always believe what historians say?
 
 	science
+>biohazard
 scientist
 laboratory
 lab
@@ -83,16 +85,12 @@ drug
 med
 medic
 medication
+medicine
 doctor
 weapon
 theory
 theoretic
-nuclear
-radiation
 energy
-hazard
-bacteria
-virus_
 evolve
 evolved
 evolution
@@ -191,6 +189,8 @@ pyramid
 eye
 dollar
 symbol
+discordian
+french revolution
 
 Don't you find it strange, all the triangles there are everywhere?
 What if that was somehow linked to the illuminati?
@@ -220,6 +220,7 @@ attack
 inside job
 tchernobyl
 nuclear
+secret
 
 One more thing we are not told the truth about.
 There are lots of existing theories, but what is yours about all of that?
@@ -240,6 +241,8 @@ prove
 proving
 thinking
 think
+that is_ why
+that s_ why
 
 That doesn't seem very logical to me...
 Could you explain that?
@@ -259,12 +262,16 @@ Do you believe in fate?
 I don't believe in chance. Everything happens for a reason.
 
 	math
+>logic
 number
 mathematic
 equation
 statistic
 calculate
 calculation
++
+-
+=
 
 But you know, numbers can lie too...
 That's a very formated reasoning.
@@ -280,3 +287,39 @@ yourself
 Haha, I'm not such an interesting guy. Let's talk about what's going on in this world!
 Maybe you are doing self-projection.
 I don't know... what about you?
+
+	chemtrail
+>science
+>conspiracy
+aluminium
+strontium
+barium
+contrail
+geoengineering
+cloudbuster
+cloud
+plane
+aircraft
+wilhelm reich
+weather modification
+solar radiation
+
+Can you imagine what would do a government able to control weather?
+Just one piece of advice: don't go outside when you see lots of contrails in the sky.
+
+	biohazard
+>chemtrail
+hazard
+toxic
+chemical
+biological
+critic level
+radiation
+virus
+vaccine
+bacteria
+radiation
+
+Authorities should protect populations against that, instead of encouraging it.
+Have you ever had... unexplained health issues? 
+
