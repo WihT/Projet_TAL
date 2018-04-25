@@ -1,0 +1,83 @@
+\documentclass[paper=a4, fontsize=11pt]{article}
+
+\usepackage[margin=0.9in]{geometry} % margin size
+
+% choose language and encoding options
+\usepackage[frenchb]{babel}
+% \usepackage[english]{babel}  % decomment to use English
+\usepackage[utf8]{inputenc}
+
+% some useful options for tables and arrays
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% fonts
+\usepackage{libertine}
+
+% custom colors - you can define your own colours
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+% maths
+\usepackage{amsmath}
+
+% misc
+\usepackage{url}
+
+% page formating with the "fancy header" package
+\usepackage{sectsty} % Allows customising section commands
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % header
+\fancyfoot[L]{} % left footer
+\fancyfoot[C]{\thepage} % centre footer
+\fancyfoot[R]{}  % right footer
+\renewcommand{\headrulewidth}{1pt} 
+\renewcommand{\footrulewidth}{1pt} 
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+
+\usepackage{lipsum} % generate dummy text
+\usepackage{amsmath,amsfonts,amsthm} % maths packages
+\usepackage{graphicx} % graphics package
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ % Le contenu de votre document commence ici
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{Rapport projet Traitement Automatique des Langues}
+\author{Florent VOLLMER - Thibaut WITCZAK}
+\date{05 Mai 2018}
+\maketitle
+
+\section{Objectif du projet}
+Le projet a pour but la création d'un chatbot communiquant en anglais ou en français. \\
+
+Le chatbot devra avoir 3 modes :
+\begin{itemize}
+\item Le premier correspond à des réponses de type \og uh huh\fg ou \og hum\fg
+\item Le deuxième correspond à des réponses semblable au bot Eliza
+\item Le troisième est \og libre\fg, c'est dans ce mode que s'illustre la spécificité du chatbot créé
+\end{itemize}
+
+\vspace{0.5cm}
+
+Notre chatbot aura pour spécificité de \textbf{croire aux théories du complot}, ainsi lorsque l'utilisateur discutera avec lui, \og Bob\fg notre chatbot orientera la discussion vers ces théories.
+De même, il se pourra que Bob pense que vous êtes au coeur de la théorie (par exemple que vous êtes un reptilien) et fuira.
+
+\section{Motivations pour le projet}
+La raison pour laquelle nous avons décidé d'opter pour un chatbot persuadé que les théories du complot sont vraies est que nous avons pensé que cela pourrait être drôle. En effet, le fait que notre chatbot y croit pourrait faire en sorte que des discussions drôles puissent survenir. 
+
+\section{Fonctionnement et limites du projet}
+
+
+\section{Contributions des membres au projet}
+
+\end{document}
