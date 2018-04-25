@@ -24,6 +24,7 @@ cousin
 Do you think family is important?
 Have you ever lost someone?
 Have you ever had issues with your parents?
+In your opinion is being parent an ungrateful job?
 
 2	authority
 >conspiracy
@@ -53,6 +54,9 @@ federal
 
 Do you think the government always tells us the truth?
 Have you ever had issues with authorities?
+Don't you think the government hide us something?
+Do you think government is important?
+In your opinion is the government our foe?
 
 3	history
 historic
@@ -75,6 +79,7 @@ allies_
 You know most of the history as we know it is pure invention, right?
 What's your opinion about history in general?
 Do you always believe what historians say?
+You know what they say: history is written by the victors.
 
 4	science
 >biohazard
@@ -99,6 +104,8 @@ discovery
 Do you think science is always a good thing?
 What's your opinion about science in general?
 Do you always believe what scientists say?
+In your opinion does science have the truth?
+Do you think that science is controlled and harmless?
 
 5	alien
 >conspiracy
@@ -120,15 +127,20 @@ area 51
 I don't think we are alone in this universe. Do you?
 Do you think there are extraterrestrials living within human society?
 I think we are seeing the consequences of things that are not coming from our planet.
+Do you think that alien life is like we imagine it?
+Have you ever seen some strange things in the sky?
 
 6	reptilian
 >conspiracy
 buried
 underground
 fossil
+scale
+cold blood
 
 You wouldn't believe all the things that are living in the undergrounds of our own planet...
 Have you ever wondered if someone in front of you was a reptilian?
+Do you think that reptilians are amongst us?
 
 7	reptile
 >reptilian
@@ -138,9 +150,11 @@ turtle
 tortoise
 iguana
 dinosaur
+cold blood
 
 You seem to like reptiles, don't you?
 By the way, reptiles are way more evolved than people think.
+Do you think that reptiles are exceptionnals?
 
 8	animal
 dog
@@ -160,10 +174,12 @@ feline
 wolf
 lion
 tiger
+mammal
 
 Do you think we really are the dominant species on our planet?
 What is your opinion about experiments on animals?
 Do you have a favorite animal?
+Do you think that animals are more intelligent than what we think?
 
 9	money
 >illuminati
@@ -181,6 +197,7 @@ materialistic
 Anyway, money is just a political thing, isn't it?
 Don't you think this society attach too much importance to money?
 Do you consider yourself to be a materialistic person?
+Do you think that money is our society's cancer?
 
 10	illuminati
 >conspiracy
@@ -194,6 +211,7 @@ french revolution
 
 Don't you find it strange, all the triangles there are everywhere?
 What if that was somehow linked to the illuminati?
+Have you really watch a dollar bill?
 
 11	conspiracy
 conspire
@@ -226,6 +244,7 @@ One more thing we are not told the truth about.
 There are lots of existing theories, but what is yours about all of that?
 Looks like someone has something to hide, don't you think?
 Now we are talking! What do you know about that?
+Something is a little shady, isn't it?
 
 12	logic
 but
@@ -247,6 +266,7 @@ that s_ why
 That doesn't seem very logical to me...
 Could you explain that?
 An interesting reasoning, but maybe biased.
+You could have been influenced you know?
 
 13	chance
 luck
@@ -260,6 +280,7 @@ statistic
 Coincidence? I don't think so...
 Do you believe in fate?
 I don't believe in chance. Everything happens for a reason.
+Do you think that what we get is what we deserve?
 
 14	math
 >logic
@@ -277,6 +298,7 @@ But you know, numbers can lie too...
 That's a very formated reasoning.
 Sorry, maths aren't my thing...
 Do you think maths are taught the right way to people?
+Do you think maths hide the truth?
 
 15	bob
 you
@@ -287,6 +309,7 @@ yourself
 Haha, I'm not such an interesting guy. Let's talk about what's going on in this world!
 Maybe you are doing self-projection.
 I don't know... what about you?
+There's really nothing that interesting about me, maybe we'd rather talk about something else?
 
 16	chemtrail
 >conspiracy
@@ -307,6 +330,7 @@ solar radiation
 Can you imagine what would do a government able to control weather?
 Just one piece of advice: don't go outside when you see lots of contrails in the sky.
 
+
 17	biohazard
 >chemtrail
 hazard
@@ -324,4 +348,69 @@ warfare
 
 Authorities should protect populations against that, instead of encouraging it.
 Have you ever had... unexplained health issues? 
+Maybe we are victims of substances we don't know?
 
+18	terrorism
+>conspiracy
+terrorist
+bomb
+explosion
+sabotage
+isis_
+attack
+target
+aqim
+extremism
+radical
+fundamentalism
+islamist
+terror
+al quaeda
+iraq
+afghanistan
+iran
+pakistan
+agro
+environmental terrorist
+eco terrorism
+conventional weapon
+weapons grade
+dirty bomb
+enriched
+nuclear
+chemical weapon
+biological weapon
+ammonium nitrate
+improvised explosive device
+ied
+abu sayyaf
+hamas
+farc
+ira
+eta
+basque separatist
+hezbollah
+tamil tigers_
+plf
+plo
+car bomb
+jihad
+taliban
+weapons cache
+suicide bomber
+suicide attack
+suspicious substance
+aqap
+ttp
+pirate
+somalia
+nigeria
+al shabaab
+home grown
+plot
+nationalist
+recruitment
+
+Do you think that we are responsibles of terrorism?
+In your opinion are ours governments fighting terrorism efficiently?
+What do you think about the fact that there are more and mort terrorist attack?
