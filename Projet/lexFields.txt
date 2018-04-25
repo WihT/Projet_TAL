@@ -24,7 +24,7 @@ cousin
 Do you think family is important?
 Have you ever lost someone?
 Have you ever had issues with your parents?
-In your opinion is being parent an ungrateful job?
+In your opinion, is being parent an ungrateful job?
 
 2	authority
 >conspiracy
@@ -55,8 +55,8 @@ federal
 Do you think the government always tells us the truth?
 Have you ever had issues with authorities?
 Don't you think the government hide us something?
-Do you think government is important?
-In your opinion is the government our foe?
+Do you think is our friend?
+In your opinion, what is the first purpose of a government?
 
 3	history
 historic
@@ -105,7 +105,7 @@ Do you think science is always a good thing?
 What's your opinion about science in general?
 Do you always believe what scientists say?
 In your opinion does science have the truth?
-Do you think that science is controlled and harmless?
+Do you think that science can be controlled and harmless?
 
 5	alien
 >conspiracy
@@ -154,7 +154,7 @@ cold blood
 
 You seem to like reptiles, don't you?
 By the way, reptiles are way more evolved than people think.
-Do you think that reptiles are exceptionnals?
+Do you think reptiles are exceptional animals?
 
 8	animal
 dog
@@ -179,7 +179,7 @@ mammal
 Do you think we really are the dominant species on our planet?
 What is your opinion about experiments on animals?
 Do you have a favorite animal?
-Do you think that animals are more intelligent than what we think?
+Do you believe animals are more intelligent than we think?
 
 9	money
 >illuminati
@@ -211,7 +211,7 @@ french revolution
 
 Don't you find it strange, all the triangles there are everywhere?
 What if that was somehow linked to the illuminati?
-Have you really watch a dollar bill?
+Have you ever closely watched a dollar bill?
 
 11	conspiracy
 conspire
@@ -251,10 +251,12 @@ but
 thus
 so
 since
+if
 then
 conclusion
 conclude
 concluding
+evidence
 proof
 prove
 proving
@@ -262,11 +264,13 @@ thinking
 think
 that is_ why
 that s_ why
+otherwise
+in that case
 
 That doesn't seem very logical to me...
 Could you explain that?
 An interesting reasoning, but maybe biased.
-You could have been influenced you know?
+You could have been influenced, you know?
 
 13	chance
 luck
@@ -309,7 +313,7 @@ yourself
 Haha, I'm not such an interesting guy. Let's talk about what's going on in this world!
 Maybe you are doing self-projection.
 I don't know... what about you?
-There's really nothing that interesting about me, maybe we'd rather talk about something else?
+There's really not much to say about me, maybe we'd rather talk about something else?
 
 16	chemtrail
 >conspiracy
@@ -333,15 +337,18 @@ Just one piece of advice: don't go outside when you see lots of contrails in the
 
 17	biohazard
 >chemtrail
+>terrorism
 hazard
 toxic
 chemic
 biologic
+substance
 critic level
 radiation
 virus_
 vaccine
 bacteria
+nuclear
 radiation
 weapon
 warfare
@@ -352,34 +359,28 @@ Maybe we are victims of substances we don't know?
 
 18	terrorism
 >conspiracy
-terrorist
+terror
 bomb
 explosion
+explode
+exploding
 sabotage
 isis_
 attack
 target
+targeting
 aqim
 extremism
 radical
+islamism
 fundamentalism
-islamist
-terror
 al quaeda
 iraq
 afghanistan
 iran
 pakistan
-agro
-environmental terrorist
-eco terrorism
-conventional weapon
-weapons grade
 dirty bomb
 enriched
-nuclear
-chemical weapon
-biological weapon
 ammonium nitrate
 improvised explosive device
 ied
@@ -388,7 +389,8 @@ hamas
 farc
 ira
 eta
-basque separatist
+basque
+separatist
 hezbollah
 tamil tigers_
 plf
@@ -396,9 +398,9 @@ plo
 car bomb
 jihad
 taliban
-weapons cache
-suicide bomber
-suicide attack
+weapon cache
+bomber
+suicide
 suspicious substance
 aqap
 ttp
@@ -406,11 +408,11 @@ pirate
 somalia
 nigeria
 al shabaab
-home grown
-plot
-nationalist
-recruitment
+nationalism
+watchlist_
+watchlists_
 
-Do you think that we are responsibles of terrorism?
-In your opinion are ours governments fighting terrorism efficiently?
-What do you think about the fact that there are more and mort terrorist attack?
+Do you think that we are responsible for terrorism?
+In your opinion, are our governments fighting terrorism efficiently?
+What do you think about the fact that there are more and more terrorist attacks?
+Don't you see that's all a distraction?

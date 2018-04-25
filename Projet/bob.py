@@ -140,6 +140,8 @@ def checkYesNo(ansWords) :
 			score -= 7
 		elif ansWords[iWord] == "not" :
 			score -= 3
+			if iWord + 2 <= len(ansWords) and ansWords[iWord+1] == "sure" :
+				return 0
 		elif iWord + 2 <= len(ansWords) :
 			if ansWords[iWord] == "i":
 				if ansWords[iWord+1] == "think" or ansWords[iWord+1] == "guess" or ansWords[iWord+1] == "do" :
@@ -157,8 +159,8 @@ def checkYesNo(ansWords) :
 				else :
 					score += 2
 					score *= 2
-		elif ansWords[iWord] == "if" :
-			score /= 2
+		if ansWords[iWord] == "if" or ansWords[iWord] == "normally" or ansWords[iWord] == "maybe" :
+			score /= 4
 	return score/len(ansWords)
 
 def matchLex(wAns, wLex) :
@@ -176,4 +178,6 @@ def matchLex(wAns, wLex) :
 			wAns = wAns[:-3] + "y"
 		else :
 			wAns = wAns[:-1]
+	if wAns.endswith("st") :
+		wAns = wAns[:-1] + "m"
 	return wAns == wLex
