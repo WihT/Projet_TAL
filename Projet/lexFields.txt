@@ -24,7 +24,7 @@ cousin
 Do you think family is important?
 Have you ever lost someone?
 Have you ever had issues with your parents?
-In your opinion, is being parent an ungrateful job?
+Do you consider being parent as an ungrateful job?
 
 2	authority
 >conspiracy
@@ -54,11 +54,12 @@ federal
 
 Do you think the government always tells us the truth?
 Have you ever had issues with authorities?
-Don't you think the government hide us something?
-Do you think is our friend?
+Don't you think the government hides us something?
+Do you think the government is our friend?
 In your opinion, what is the first purpose of a government?
 
 3	history
+>education
 historic
 historian
 king
@@ -100,6 +101,7 @@ evolve
 evolved
 evolution
 discovery
+study
 
 Do you think science is always a good thing?
 What's your opinion about science in general?
@@ -288,6 +290,8 @@ Do you think that what we get is what we deserve?
 
 14	math
 >logic
+>education
+>science
 number
 mathematic
 equation
@@ -412,84 +416,73 @@ nationalism
 watchlist_
 watchlists_
 
-Do you think that we are responsible for terrorism?
+In your mind, who is really responsible for terrorism?
 In your opinion, are our governments fighting terrorism efficiently?
 What do you think about the fact that there are more and more terrorist attacks?
 Don't you see that's all a distraction?
+Anyway, most of terrorist attacks are in fact inside jobs.
 
 19	education
-active learning
+educate
+school
+schooling
+learn
+learning
+teach
+teacher
+teaches_
+teaching
+degree
+diploma
+graduate
+elementary
+secondary
+study
+studying
 assessment
-at-risk children
-grades
-books
-blended learning
-boarding schools
+at risk child
+at risk children
+class_
+classes_
+classroom
+exam
+examination
+test
+grade
+textbook
+book
+boarding school
 bully
-charter schools
+cheat
 cheating
-ADHD
-class size
-classroom discipline
-classroom management
+adhd
 cognitive development
-collaborative learning
 common core
-computer literacy
-computer-assisted instruction
-conflict resolution
-cyberbullying
-differentiated learning
-digital literacy
-discipline
-dyslexia
-e-learning
-early childhood education
-educational technology
-elementary education
-elementary school
-flipped classroom
-gender-segregated education
-home schooling
-homework
-information literacy
-learning modalities
-learning theory
 literacy
-mentoring
-high school
-middle school
+computer science
+geography
+cyberbullying
+discipline
+disciplined
+dyslexia
+educational
+gender segregated
+homework
+literacy
+school
 college
 university
-merit pay for teacher
-motivation to learn
-no child left behind
-school lunches
-outcomes-based education
 parental involvement
-peer counseling
-plagiarism
-portfolios
-school choice
-school reform
-school schedule
-school uniform
+mentoring
+counseling
+counselor
+advisor
+portfolio
 uniform
-secondary education
-sex education
-standards of learning
-standardized testing
-stem
-teacher salaries
-teacher unions
-teacher philosophy
 technology integration
-textbooks
-violence in school
 
+According to you, what is the first purpose of schooling?
 Do you think our education system is efficient?
-It's all about format students...
-You know, I've never been to school and I'm proud of it.
+It's all about formating people...
 Education is just a massive tool for propaganda.
-Have you been to school?
-I assume you are the perfect education's product.
+Do you see yourself as a product of education?
