@@ -10,7 +10,7 @@ from lexicalField import LexField
 with open("lexFields.txt","r") as filepointer :
 	# lecture du fichier de champs lexicaux
 	content = filepointer.read()
-	tmp = re.split("\n\n\d+\t", content)
+	tmp = re.split("\n\n\n", content)
 	subjects = []
 	for lex in tmp :
 		subjects.append(LexField(lex))
@@ -18,16 +18,14 @@ with open("lexFields.txt","r") as filepointer :
 LexField.linkParents()
 subjects = LexField.subjects
 		
-prevChoice = 0
 bob = Bob(subjects)
 print("Bob : Hi I'm Bob! Please tell me something about you.")
 
 while True:
-	choice = bob.respond(input("You : "), subjects, prevChoice)
-	if  choice == -1 :
+	choice = bob.respond(input("You : "), subjects)
+	if  choice < 0 :
 		break
 	#print(subjects)
 	for subj in subjects :
 		subj.decrement()
-	prevChoice = choice
 	#print(subjects)

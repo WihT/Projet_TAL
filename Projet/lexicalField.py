@@ -1,19 +1,24 @@
 import re
+from answer import Answer
 
 class LexField:
 	"""Representation of a lexical field"""
 	subjects = []
 	
 	def __init__(self, content):
-		self.paragraphs = content.split("\n\n")
-		self.keyWords = self.paragraphs[0].split("\n")
-		self.answers = self.paragraphs[1].split("\n")
+		paragraphs = content.split("\n\n")
+		id = int(paragraphs[0])
+		self.keyWords = paragraphs[1].split("\n")
+		tempAnswers = paragraphs[2].split("\n")
+		self.answers = []
+		for iAns in range(len(tempAnswers)) :
+			self.answers.append(Answer(tempAnswers[iAns], id*10+iAns))
 		self.keyGroups = []
 		self.parents = []
 		self.pertinent = 0
 		i = 0
-		while i < len(self.keyWords):
-			if self.keyWords[i].startswith(">"):
+		while i < len(self.keyWords) :
+			if self.keyWords[i].startswith(">") :
 				self.parents.append(self.keyWords[i])
 				del self.keyWords[i]
 			elif " " in self.keyWords[i]:

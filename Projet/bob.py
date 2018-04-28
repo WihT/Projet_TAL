@@ -3,7 +3,7 @@ import random
 from lexicalField import LexField
 
 class Bob:
-	"""Representation of a lexical field"""
+	"""Representation of Bob"""
 	
 	
 	def __init__(self, subjs):
@@ -11,12 +11,14 @@ class Bob:
 		self.stress = 0
 		self.interest = 0
 		#print(str(self))
+		self.prevChoices = []
+		self.choiceMode1 = 0
 		
 	def __str__(self):
 		return str(self.sympathy) + "\n" + str(self.stress) + "\n" + str(self.interest)
 
 
-	def respond(self, answer, subjects, prevChoice) :
+	def respond(self, answer, subjects) :
 		if (answer == "Bye") or (answer == "bye") :
 			print("Bob : See you !")
 			return -1
@@ -24,7 +26,7 @@ class Bob:
 		#print("I recognized the word " + wLex + " from lexical \"" + lexicals[iLex][0] + "\"")
 		
 		ansWords = re.split("[ .,'?!/()]+", answer)
-		for iWord in range(len(ansWords)):
+		for iWord in range(len(ansWords)) :
 			ansWords[iWord] = ansWords[iWord].lower()
 			for iLex in range(len(subjects)) :
 				for wLex in subjects[iLex].keyWords :
@@ -38,17 +40,31 @@ class Bob:
 						if i == len(gLex) :
 							subjects[iLex].increment(1)
 		
-		choice = self.ansMode3(ansWords, subjects, prevChoice)
+		choice = self.ansMode3(ansWords, subjects)
 		if  choice == -1 :
-			choice = self.ansMode2(subjects, prevChoice)
+			choice = self.ansMode2(subjects)
 			if choice == -1 :
-				choice = self.ansMode1(prevChoice)
+				choice = self.ansMode1()
+		if choice > 9 : #that means it's a mode2 or mode3 choice
+			self.prevChoices.append(choice)
+			if len(self.prevChoices) > 20 :
+				del self.prevChoices[0]
+		#print("prevchoices = " + str(self.prevChoices))
 		return choice
 
-
-	def ansMode1(self, prevChoice) :
+	def askYesOrNo(self) :
+		choice = random.randint(0, 2)
+		str = {
+			0 : "So... is it a yes or a no?",
+			1 : "You seem to hesitate...",
+			2 : "So what would you say in conclusion?"
+		}
+		print ("Bob : " + str)
+		return choice
+	
+	def ansMode1(self) :
 		choice = random.randint(0, 4)
-		if choice >= prevChoice :
+		if choice >= self.choiceMode1 :
 			choice += 1
 		str = {
 			0 : "Interesting...",
@@ -59,10 +75,11 @@ class Bob:
 			5 : "Oh really?"
 		}[choice]
 		print ("Bob : " + str)
+		self.choiceMode1 = choice
 		return choice
 
 
-	def ansMode2(self, subjects, prevChoice) :
+	def ansMode2(self, subjects) :
 		
 		maxSubjs = []
 		maxPertinence = 0
@@ -75,31 +92,25 @@ class Bob:
 				maxSubjs.append(iSubj)
 		
 		# if there are several equally pertinent subjects, Bob chooses one randomly
-		if (len(maxSubjs) > 0):
-			maxSubj = maxSubjs[random.randint(0, len(maxSubjs)-1)]
-			choice = random.randint(0, len(subjects[maxSubj].answers)-2)
-			if choice >= prevChoice :
-				choice += 1
-			prevChoice = choice
-			print ("Bob : " + subjects[maxSubj].answers[choice])
-			return choice
-		else:
+		if len(maxSubjs) > 0 :
+			ansList = [] #flattened list of the answers
+			for iSubj in maxSubjs :
+				for ans in subjects[iSubj].answers :
+					ansList.append(ans)
+			#Removing the previous answers in order to avoid repetition
+			ansList = [ans for ans in ansList if ans.id not in self.prevChoices]
+			#print("ansList = " + str(ansList))
+			if len(ansList) == 0 :
+				return -1
+			answer = ansList[random.randint(0, len(ansList)-1)]
+			print ("Bob : " + str(answer))
+			return answer.id
+		else :
 			return -1
 
 
-	def ansMode3(self, ansWords, subjects, prevChoice) :
-		yesNo = checkYesNo(ansWords)
-		if yesNo >  1:
-			print("*Bob thinks you said yes.* ( yesNo = " + str(yesNo) + " )")
-			self.sympathy += 1
-		elif yesNo < -1 :
-			print("*Bob thinks you said no* ( yesNo = " + str(yesNo) + " )")
-			self.sympathy -= 1
-		else :
-			print("*Bob thinks you hesitate.* ( yesNo = " + str(yesNo) + " )")
+	def ansMode3(self, ansWords, subjects) :
 		
-		if checkStunned(ansWords) > 0 :
-			print("*Bob notices you are stunned*")
 	   
 		return -1
 			

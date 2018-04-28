@@ -1,3 +1,5 @@
+1
+
 family
 child
 children
@@ -26,7 +28,10 @@ Have you ever lost someone?
 Have you ever had issues with your parents?
 Do you consider being parent as an ungrateful job?
 
-2	authority
+
+2
+
+authority
 >conspiracy
 state
 country
@@ -58,7 +63,10 @@ Don't you think the government hides us something?
 Do you think the government is our friend?
 In your opinion, what is the first purpose of a government?
 
-3	history
+
+3
+
+history
 >education
 historic
 historian
@@ -82,7 +90,10 @@ What's your opinion about history in general?
 Do you always believe what historians say?
 You know what they say: history is written by the victors.
 
-4	science
+
+4
+
+science
 >biohazard
 scientist
 laboratory
@@ -109,7 +120,10 @@ Do you always believe what scientists say?
 In your opinion does science have the truth?
 Do you think that science can be controlled and harmless?
 
-5	alien
+
+5
+
+alien
 >conspiracy
 extraterrestrial
 planet
@@ -132,7 +146,10 @@ I think we are seeing the consequences of things that are not coming from our pl
 Do you think that alien life is like we imagine it?
 Have you ever seen some strange things in the sky?
 
-6	reptilian
+
+6
+
+reptilian
 >conspiracy
 buried
 underground
@@ -144,7 +161,10 @@ You wouldn't believe all the things that are living in the undergrounds of our o
 Have you ever wondered if someone in front of you was a reptilian?
 Do you think that reptilians are amongst us?
 
-7	reptile
+
+7
+
+reptile
 >reptilian
 >animal
 lizard
@@ -158,7 +178,10 @@ You seem to like reptiles, don't you?
 By the way, reptiles are way more evolved than people think.
 Do you think reptiles are exceptional animals?
 
-8	animal
+
+8
+
+animal
 dog
 cat
 cow
@@ -183,7 +206,10 @@ What is your opinion about experiments on animals?
 Do you have a favorite animal?
 Do you believe animals are more intelligent than we think?
 
-9	money
+
+9
+
+money
 >illuminati
 bank
 currency
@@ -199,9 +225,12 @@ materialistic
 Anyway, money is just a political thing, isn't it?
 Don't you think this society attach too much importance to money?
 Do you consider yourself to be a materialistic person?
-Do you think that money is our society's cancer?
+What do you think money has been invented for ?
 
-10	illuminati
+
+10
+
+illuminati
 >conspiracy
 triangle
 pyramid
@@ -215,7 +244,10 @@ Don't you find it strange, all the triangles there are everywhere?
 What if that was somehow linked to the illuminati?
 Have you ever closely watched a dollar bill?
 
-11	conspiracy
+
+11
+
+conspiracy
 conspire
 conspiring
 plot
@@ -248,7 +280,10 @@ Looks like someone has something to hide, don't you think?
 Now we are talking! What do you know about that?
 Something is a little shady, isn't it?
 
-12	logic
+
+12
+
+logic
 but
 thus
 so
@@ -274,7 +309,10 @@ Could you explain that?
 An interesting reasoning, but maybe biased.
 You could have been influenced, you know?
 
-13	chance
+
+13
+
+chance
 luck
 luckily_
 probability
@@ -288,7 +326,10 @@ Do you believe in fate?
 I don't believe in chance. Everything happens for a reason.
 Do you think that what we get is what we deserve?
 
-14	math
+
+14
+
+math
 >logic
 >education
 >science
@@ -308,7 +349,10 @@ Sorry, maths aren't my thing...
 Do you think maths are taught the right way to people?
 Do you think maths hide the truth?
 
-15	bob
+
+15
+
+bob
 you
 your
 yours
@@ -319,7 +363,10 @@ Maybe you are doing self-projection.
 I don't know... what about you?
 There's really not much to say about me, maybe we'd rather talk about something else?
 
-16	chemtrail
+
+16
+
+chemtrail
 >conspiracy
 contrail
 trail
@@ -339,7 +386,9 @@ Can you imagine what would do a government able to control weather?
 Just one piece of advice: don't go outside when you see lots of contrails in the sky.
 
 
-17	biohazard
+17
+
+biohazard
 >chemtrail
 >terrorism
 hazard
@@ -361,7 +410,10 @@ Authorities should protect populations against that, instead of encouraging it.
 Have you ever had... unexplained health issues? 
 Maybe we are victims of substances we don't know?
 
-18	terrorism
+
+18
+
+terrorism
 >conspiracy
 terror
 bomb
@@ -422,7 +474,10 @@ What do you think about the fact that there are more and more terrorist attacks?
 Don't you see that's all a distraction?
 Anyway, most of terrorist attacks are in fact inside jobs.
 
-19	education
+
+19
+
+education
 educate
 school
 schooling

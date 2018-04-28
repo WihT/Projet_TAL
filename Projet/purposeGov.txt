@@ -5,7 +5,6 @@ protect people
 against
 danger
 security
-terrorist
 terrorism
 attack
 
@@ -29,7 +28,7 @@ Yeah, I guess they call it "values"... values they use to justify awful things.
 3	surveillance
 a close eye
 watch
-keep tabs on
+keep tab on
 supervise
 oversee
 monitor
@@ -41,7 +40,7 @@ Yes, they are definitely watching over us. But what for?
 loving
 kind
 kindly
-benevolant
+benevolent
 nice
 good hearted
 take care
