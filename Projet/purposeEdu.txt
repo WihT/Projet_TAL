@@ -1,13 +1,22 @@
+60
+
 teach
 teaching
 learn
 learning
 logic
 reasoning
+smart
+clever
+responsible
+think by themselves
 
 Unfortunately, schooling as it exists does quite the opposite...
 
-2	value
+
+61
+
+value
 fraternity
 equality
 liberty
@@ -20,11 +29,15 @@ united
 good manner
 inculcate
 inculcating
+kindness
 kind
 
 How convenient, huh? Masses of children listening to this propaganda...
 
-3	surveillance
+
+62
+
+surveillance
 a close eye
 watch
 keep tabs on
@@ -34,9 +47,12 @@ monitor
 overwatch
 take care
 
-Of course. But that's also a way to watch over the parents, don't you think ?
+Of course. But that's also a way to watch over their families, don't you think ?
 
-4	guide
+
+63
+
+guide
 manage
 organize
 order
@@ -46,7 +62,10 @@ disciplined
 
 And that's a shame, isn't it ?
 
-5	control
+
+64
+
+control
 controlling
 format
 formating

@@ -27,7 +27,6 @@ class LexField:
 			else:
 				i += 1
 		
-		LexField.subjects.append(self)
 		
 	def __str__(self):
 		return str(self.keyWords) + "\n" + str(self.keyGroups) + "\n" + str(self.parents) + "\n" + str(self.answers) + "\n"
@@ -44,16 +43,15 @@ class LexField:
 	# Some subjects are linked to each other :
 	# when you talk about reptiles, Bob also think about reptilians
 	# so "reptilian" lexField is a parent of "reptile" lexField
-	def increment(self, value):
+	def increment(self, value, container):
 		self.pertinent += value
 		if value > 0.1 :
 			for subj in self.parents:
-				LexField.subjects[subj].increment(value*0.6)
+				container[subj].increment(value*0.6, container)
 	
 	# We replace all of the parents names by their IDs, in order to save time later
 	@staticmethod
-	def linkParents():
-		subjs = LexField.subjects
+	def linkParents(subjs):
 		for iChild in range(len(subjs)):
 			idList = []
 			for iParent in range(len(subjs[iChild].parents)):
@@ -62,6 +60,41 @@ class LexField:
 						idList.append(iSubj)
 			subjs[iChild].parents = idList
 			
-			
+	@staticmethod
+	def updateSubjects(ansWords, subjects) :
+		
+		for iWord in range(len(ansWords)) :
+			ansWords[iWord] = ansWords[iWord].lower()
+			for iLex in range(len(subjects)) :
+				for wLex in subjects[iLex].keyWords :
+					if LexField.matchLex(ansWords[iWord], wLex) :
+						subjects[iLex].increment(1, subjects)
+				for gLex in subjects[iLex].keyGroups :
+					if iWord + len(gLex) <= len(ansWords) :
+						i = 0
+						while i < len(gLex) and LexField.matchLex(ansWords[iWord+i], gLex[i]) :
+							i += 1
+						if i == len(gLex) :
+							subjects[iLex].increment(1, subjects)
+
+	@staticmethod
+	def matchLex(wAns, wLex) :
+		if wLex.endswith("_") : # That means the words must be compared as they are
+			return wAns == wLex[:-1]
+		if wAns.endswith("al") :
+			wAns = wAns[:-2]
+		elif wAns.endswith("ly") :
+			if wAns.endswith("ally") :
+				wAns = wAns[:-4]
+			else :
+				wAns = wAns[:-2]
+		elif wAns.endswith("s") :
+			if wAns.endswith("ies") :
+				wAns = wAns[:-3] + "y"
+			else :
+				wAns = wAns[:-1]
+		if wAns.endswith("st") :
+			wAns = wAns[:-1] + "m"
+		return wAns == wLex
 	
 			

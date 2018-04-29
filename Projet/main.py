@@ -15,10 +15,9 @@ with open("lexFields.txt","r") as filepointer :
 	for lex in tmp :
 		subjects.append(LexField(lex))
 		
-LexField.linkParents()
-subjects = LexField.subjects
+LexField.linkParents(subjects)
 		
-bob = Bob(subjects)
+bob = Bob()
 print("Bob : Hi I'm Bob! Please tell me something about you.")
 
 while True:

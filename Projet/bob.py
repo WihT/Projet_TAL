@@ -6,7 +6,7 @@ class Bob:
 	"""Representation of Bob"""
 	
 	
-	def __init__(self, subjs):
+	def __init__(self):
 		self.sympathy = 0
 		self.stress = 0
 		self.interest = 0
@@ -26,19 +26,8 @@ class Bob:
 		#print("I recognized the word " + wLex + " from lexical \"" + lexicals[iLex][0] + "\"")
 		
 		ansWords = re.split("[ .,'?!/()]+", answer)
-		for iWord in range(len(ansWords)) :
-			ansWords[iWord] = ansWords[iWord].lower()
-			for iLex in range(len(subjects)) :
-				for wLex in subjects[iLex].keyWords :
-					if matchLex(ansWords[iWord], wLex) :
-						subjects[iLex].increment(1)
-				for gLex in subjects[iLex].keyGroups :
-					if iWord + len(gLex) <= len(ansWords) :
-						i = 0
-						while i < len(gLex) and matchLex(ansWords[iWord+i], gLex[i]) :
-							i += 1
-						if i == len(gLex) :
-							subjects[iLex].increment(1)
+		
+		LexField.updateSubjects(ansWords, subjects)
 		
 		choice = self.ansMode3(ansWords, subjects)
 		if  choice == -1 :
@@ -111,10 +100,29 @@ class Bob:
 
 	def ansMode3(self, ansWords, subjects) :
 		
-	   
-		return -1
+		if self.prevChoices == [] :
+			return -1
+		lastChoice = self.prevChoices[len(self.prevChoices)-1]
+		
+		if lastChoice == 41 :
+			return self.miniMode2(ansWords, "purposeEdu.txt")
 			
-
+		return -1
+		
+			
+	def miniMode2(self, ansWords, srcFile) :
+		
+		with open("worstInvention.txt","r") as filepointer :
+			content = filepointer.read()
+			tmp = re.split("\n\n\n", content)
+			currentSubjects = []
+			for lex in tmp :
+				currentSubjects.append(LexField(lex))
+				
+		LexField.updateSubjects(ansWords, currentSubjects)
+		
+		return self.ansMode2(currentSubjects)
+	
 				
 #This type of method returns a positive number if it thinks the idea is present in the sentence.
 def checkStunned(ansWords) :
@@ -173,22 +181,3 @@ def checkYesNo(ansWords) :
 		if ansWords[iWord] == "if" or ansWords[iWord] == "normally" or ansWords[iWord] == "maybe" :
 			score /= 4
 	return score/len(ansWords)
-
-def matchLex(wAns, wLex) :
-	if wLex.endswith("_") : # That means the words must be compared as they are
-		return wAns == wLex[:-1]
-	if wAns.endswith("al") :
-		wAns = wAns[:-2]
-	elif wAns.endswith("ly") :
-		if wAns.endswith("ally") :
-			wAns = wAns[:-4]
-		else :
-			wAns = wAns[:-2]
-	elif wAns.endswith("s") :
-		if wAns.endswith("ies") :
-			wAns = wAns[:-3] + "y"
-		else :
-			wAns = wAns[:-1]
-	if wAns.endswith("st") :
-		wAns = wAns[:-1] + "m"
-	return wAns == wLex

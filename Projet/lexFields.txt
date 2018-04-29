@@ -115,7 +115,7 @@ discovery
 study
 
 Do you think science is always a good thing?
-What's your opinion about science in general?
+What would you say is the worst invention of humanity ?
 Do you always believe what scientists say?
 In your opinion does science have the truth?
 Do you think that science can be controlled and harmless?
@@ -352,19 +352,34 @@ Do you think maths hide the truth?
 
 15
 
-bob
-you
-your
-yours
-yourself
+you1
+are you
+have you
+you have
+you may
+you like
+you love
+you seem
+like you
+love you
 
 Haha, I'm not such an interesting guy. Let's talk about what's going on in this world!
-Maybe you are doing self-projection.
-I don't know... what about you?
 There's really not much to say about me, maybe we'd rather talk about something else?
 
 
 16
+
+you2
+you think
+according to you
+your opinion
+your mind
+
+I don't know... what about you?
+Maybe I will tell you, but first I would like to hear your opinion.
+
+
+17
 
 chemtrail
 >conspiracy
@@ -386,7 +401,7 @@ Can you imagine what would do a government able to control weather?
 Just one piece of advice: don't go outside when you see lots of contrails in the sky.
 
 
-17
+18
 
 biohazard
 >chemtrail
@@ -411,7 +426,7 @@ Have you ever had... unexplained health issues?
 Maybe we are victims of substances we don't know?
 
 
-18
+19
 
 terrorism
 >conspiracy
@@ -475,7 +490,7 @@ Don't you see that's all a distraction?
 Anyway, most of terrorist attacks are in fact inside jobs.
 
 
-19
+20
 
 education
 educate
