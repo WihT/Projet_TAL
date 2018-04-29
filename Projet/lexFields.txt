@@ -95,6 +95,7 @@ You know what they say: history is written by the victors.
 
 science
 >biohazard
+>medicine
 scientist
 laboratory
 lab
@@ -566,3 +567,106 @@ Do you think our education system is efficient?
 It's all about formating people...
 Education is just a massive tool for propaganda.
 Do you see yourself as a product of education?
+
+
+21
+
+computing
+computer
+screen
+code
+language
+cpu
+gpu
+ram
+memory
+hdd
+ssd
+mouse
+keyboard
+trackpad
+battery
+it
+information technology
+tracker
+hacker
+cracker
+download
+load
+internet
+web
+www
+com
+program
+software
+hardware
+printer
+blue screen
+windows
+linux
+os
+system
+security
+network
+database
+big data
+data
+keychain
+bitcoin
+keyword
+google
+facebook
+twitter
+youtube
+login
+password
+vpn
+lan
+4g
+ping
+virtual reality
+vr
+tor
+darkweb
+deepweb
+
+They know everything from you with your online researches...
+Beware of what you search on the Internet!
+You know that if you do something illegal they will know it...
+Maybe they are watching our conversation.
+Do you know how to be invisible on the net?
+Major web compagnies control our governments. Did you know that?
+
+
+22
+
+medicine
+medication
+meds
+drugs
+vaccine
+flu
+cold
+symptom
+headache
+stomach ache
+hospital
+vaccination
+inoculation
+virus_
+bacterium
+mycosis
+disease
+sick
+ill
+unwell
+runny nose
+treatment
+graft
+
+Some people think there are nano robots in vaccine to control people. What is your opinion?
+Do you think vaccine are really effective?
+If I tell you medicine, what do you think?
+Don't you think modern medicine is just about manipulate people?
+What if pharmaceutical industry provoke diseases in order to sell meds?
+Do you know that most of meds are placebo?
