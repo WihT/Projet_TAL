@@ -215,9 +215,16 @@ bank
 currency
 bitcoin
 insurance
+credit
 cost
 pay
 paid
+buy
+buying
+bought
+sell
+selling
+sold
 job
 materialist
 materialistic
@@ -225,7 +232,7 @@ materialistic
 Anyway, money is just a political thing, isn't it?
 Don't you think this society attach too much importance to money?
 Do you consider yourself to be a materialistic person?
-What do you think money has been invented for ?
+What do you think money has been invented for?
 
 
 10
@@ -362,6 +369,8 @@ you love
 you seem
 like you
 love you
+your favorite
+your name
 
 Haha, I'm not such an interesting guy. Let's talk about what's going on in this world!
 There's really not much to say about me, maybe we'd rather talk about something else?
@@ -374,6 +383,7 @@ you think
 according to you
 your opinion
 your mind
+your theory
 
 I don't know... what about you?
 Maybe I will tell you, but first I would like to hear your opinion.

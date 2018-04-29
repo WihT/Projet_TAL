@@ -1,4 +1,6 @@
-Terrorism
+80
+
+terrorism
 villain
 enemy
 rogue state
@@ -6,7 +8,10 @@ outlaw
 
 Haha, reality is never as simple as that.
 
-2	everyone
+
+81
+
+everyone
 everybody
 nobody
 no one
@@ -18,7 +23,10 @@ society
 
 Well, you make a point. It's always difficult to see who's the one really responsible.
 
-3	government
+
+82
+
+government
 authorities
 state
 country
@@ -29,7 +37,10 @@ manipulation
 
 Exactly. No need for terrorists, our governments already are terrible enough by themselves!
 
-4	us
+
+83
+
+us
 our responsibility
 ours_
 we
@@ -38,7 +49,10 @@ me
 
 Yeah kind of, but you know, we are just tools of a system...
 
-5	alien
+
+84
+
+alien
 reptilian
 illuminati
 extraterrestrial

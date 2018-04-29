@@ -19,7 +19,7 @@ class Bob:
 
 
 	def respond(self, answer, subjects) :
-		if (answer == "Bye") or (answer == "bye") :
+		if (answer.lower() == "bye") or (answer.lower() == "goodbye") or (answer.lower() == "see you"):
 			print("Bob : See you !")
 			return -1
 			
@@ -38,7 +38,7 @@ class Bob:
 			self.prevChoices.append(choice)
 			if len(self.prevChoices) > 20 :
 				del self.prevChoices[0]
-		#print("prevchoices = " + str(self.prevChoices))
+		print("prevchoices = " + str(self.prevChoices))
 		return choice
 
 	def askYesOrNo(self) :
@@ -88,7 +88,7 @@ class Bob:
 					ansList.append(ans)
 			#Removing the previous answers in order to avoid repetition
 			ansList = [ans for ans in ansList if ans.id not in self.prevChoices]
-			#print("ansList = " + str(ansList))
+			print("ansList = " + str(ansList))
 			if len(ansList) == 0 :
 				return -1
 			answer = ansList[random.randint(0, len(ansList)-1)]
@@ -105,14 +105,22 @@ class Bob:
 		lastChoice = self.prevChoices[len(self.prevChoices)-1]
 		
 		if lastChoice == 41 :
+			return self.miniMode2(ansWords, "worstInvention.txt")
+		elif lastChoice == 93 :
+			return self.miniMode2(ansWords, "purposeMoney.txt")
+		elif lastChoice == 190 :
+			return self.miniMode2(ansWords, "respoTerror.txt")
+		elif lastChoice == 200 :
 			return self.miniMode2(ansWords, "purposeEdu.txt")
+		elif lastChoice == 24 or lastChoice == 520 :
+			return self.miniMode2(ansWords, "purposeGov.txt")
 			
 		return -1
 		
 			
 	def miniMode2(self, ansWords, srcFile) :
 		
-		with open("worstInvention.txt","r") as filepointer :
+		with open(srcFile,"r") as filepointer :
 			content = filepointer.read()
 			tmp = re.split("\n\n\n", content)
 			currentSubjects = []

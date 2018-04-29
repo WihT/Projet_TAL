@@ -18,7 +18,7 @@ with open("lexFields.txt","r") as filepointer :
 LexField.linkParents(subjects)
 		
 bob = Bob()
-print("Bob : Hi I'm Bob! Please tell me something about you.")
+print("Bob : Hi I'm Bob! What could we talk about?")
 
 while True:
 	choice = bob.respond(input("You : "), subjects)
