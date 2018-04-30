@@ -7,7 +7,12 @@ class LexField:
 	
 	def __init__(self, content):
 		paragraphs = content.split("\n\n")
-		id = int(paragraphs[0])
+		if "|" in paragraphs[0] :
+			numbers = paragraph[0].split("|")
+			self.influence = numbers[1:]
+		else :
+			self.influence = []
+			id = int(paragraphs[0])
 		self.keyWords = paragraphs[1].split("\n")
 		tempAnswers = paragraphs[2].split("\n")
 		self.answers = []

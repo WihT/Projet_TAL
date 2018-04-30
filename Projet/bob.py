@@ -1,5 +1,6 @@
 import re
 import random
+import math
 from lexicalField import LexField
 
 class Bob:
@@ -34,6 +35,10 @@ class Bob:
 			choice = self.ansMode2(subjects)
 			if choice == -1 :
 				choice = self.ansMode1()
+				self.interest -= 1
+		else : 
+			self.interest += 2
+		
 		if choice > 9 : #that means it's a mode2 or mode3 choice
 			self.prevChoices.append(choice)
 			if len(self.prevChoices) > 20 :
@@ -44,12 +49,23 @@ class Bob:
 	def askYesOrNo(self) :
 		choice = random.randint(0, 2)
 		str = {
-			0 : "So... is it a yes or a no?",
+			0 : "So... is that a yes or a no?",
 			1 : "You seem to hesitate...",
 			2 : "So what would you say in conclusion?"
 		}
 		print ("Bob : " + str)
-		return choice
+		return choice + 1000
+		
+	def askPrecision(self) :
+		choice = random.randint(0, 2)
+		str = {
+			0 : "So what's your point?",
+			1 : "Okay, continue...",
+			2 : "And what does it mean according to you?"
+		}
+		print ("Bob : " + str)
+		return choice + 1003
+		
 	
 	def ansMode1(self) :
 		choice = random.randint(0, 4)
@@ -100,22 +116,53 @@ class Bob:
 
 	def ansMode3(self, ansWords, subjects) :
 		
+		
+		print ("interest = " + str(self.interest))
+		if self.interest <= -5 :
+				print("Bob : Hm, it's getting late, I should leave.")
+				print(" * Bob left the conversation because he got bored *")
+				return -2
+				
+			
 		if self.prevChoices == [] :
 			return -1
 		lastChoice = self.prevChoices[len(self.prevChoices)-1]
 		
-		if lastChoice == 41 :
-			return self.miniMode2(ansWords, "worstInvention.txt")
-		elif lastChoice == 93 :
-			return self.miniMode2(ansWords, "purposeMoney.txt")
-		elif lastChoice == 190 :
-			return self.miniMode2(ansWords, "respoTerror.txt")
-		elif lastChoice == 200 :
-			return self.miniMode2(ansWords, "purposeEdu.txt")
-		elif lastChoice == 24 or lastChoice == 520 :
-			return self.miniMode2(ansWords, "purposeGov.txt")
+		if self.stress >= 3 :
+			print("Bob : Wait... are you working for... some agency?")
+			return 580
 			
-		return -1
+		if self.stress >= 5 :
+			print("Bob : Yeah hm... I think it's time for me to got to... the swimming pool... in order to... walk my pony or something like that...")
+			print(" * Bob ran away from you, convinced you are from the NSA *")
+			
+		if self.sympathy <= -5 :
+			print("Bob : Well this conversation was... interesting, but maybe you're too young to plainly understand these subjects.")
+			print(" * Bob left the conversation because you have been too annoying to him *")
+		
+		if math.floor(lastChoice/10) == 100 :
+			lastChoice = self.prevChoices[len(self.prevChoices)-2]
+			
+		choice = -1
+		if lastChoice == 41 :
+			choice = self.miniMode2(ansWords, "worstInvention.txt")
+		elif lastChoice == 93 :
+			choice =  self.miniMode2(ansWords, "purposeMoney.txt")
+		elif lastChoice == 190 :
+			choice =  self.miniMode2(ansWords, "respoTerror.txt")
+		elif lastChoice == 200 :
+			choice =  self.miniMode2(ansWords, "purposeEdu.txt")
+		elif lastChoice == 24 or lastChoice == 520 :
+			choice =  self.miniMode2(ansWords, "purposeGov.txt")
+		elif lastChoice == 231 :
+			if checkYesNo(ansWords) > 0 :
+				choice = 233
+				print("Bob : Well then, try to prove me earth is round!")
+			
+		elif lastChoice == 233 :
+			choice =  self.miniMode2(ansWords, "proveRoundEarth.txt")
+			
+		return choice
 		
 			
 	def miniMode2(self, ansWords, srcFile) :
@@ -171,7 +218,7 @@ def checkYesNo(ansWords) :
 				return 0
 		elif iWord + 2 <= len(ansWords) :
 			if ansWords[iWord] == "i":
-				if ansWords[iWord+1] == "think" or ansWords[iWord+1] == "guess" or ansWords[iWord+1] == "do" :
+				if ansWords[iWord+1] == "think" or ansWords[iWord+1] == "guess" or ansWords[iWord+1] == "do" or ansWords[iWord+1] == "am":
 					if iWord + 3 <= len(ansWords) and ansWords[iWord+2] == "not" :
 						score -= 7
 					else :

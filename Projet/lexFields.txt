@@ -101,10 +101,6 @@ laboratory
 lab
 experiment
 drug
-med
-medic
-medication
-medicine
 doctor
 theory
 theoretic
@@ -113,7 +109,12 @@ evolve
 evolved
 evolution
 discovery
+breakthrough
+break through
+invention
+innovation
 study
+guinea pig
 
 Do you think science is always a good thing?
 What would you say is the worst invention of humanity ?
@@ -201,6 +202,11 @@ wolf
 lion
 tiger
 mammal
+mouse
+rat
+rabit
+rodent
+pig
 
 Do you think we really are the dominant species on our planet?
 What is your opinion about experiments on animals?
@@ -573,6 +579,7 @@ Do you see yourself as a product of education?
 
 computing
 computer
+compute
 screen
 code
 language
@@ -642,7 +649,7 @@ Major web compagnies control our governments. Did you know that?
 
 medicine
 medication
-meds
+med
 drugs
 vaccine
 flu
@@ -655,6 +662,7 @@ vaccination
 inoculation
 virus_
 bacterium
+bacteria
 mycosis
 disease
 sick
@@ -674,6 +682,8 @@ Do you know that most of meds are placebo?
 
 23
 
+planet
+earth
 flat earth
 star
 sun
@@ -690,9 +700,11 @@ horizon
 sky
 sea
 ocean
+skyline
+magnetic
+pole
+compass
 
-Do you know Earth is flat?
-If Earth is really round, how do you explain that no one is upside down?
+Have you ever watched the sky with a telescope?
 Some people think that the Earth is round, are you part of them?
-How do you explain the horizon is straight if our planet is round?
 I think that the round earth theory is part of the government's plan to influence people.
