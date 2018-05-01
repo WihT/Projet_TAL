@@ -9,15 +9,14 @@ class Bob:
 	
 	
 	def __init__(self):
-		self.stress = 0
 		self.interest = 0
+		self.stress = 0
 		self.sympathy = 0
-		#print(str(self))
 		self.prevChoices = []
 		self.choiceMode1 = 0
 		
 	def __str__(self):
-		return str(self.sympathy) + "  ;  " + str(self.stress) + "  ;  " + str(self.interest)
+		return "interest = " + str(self.interest) + " ;  stress = " + str(self.stress) + " ;  sympathy = " + str(self.sympathy)
 
 
 	def respond(self, answer, subjects) :
@@ -41,15 +40,12 @@ class Bob:
 				ansBob = self.ansMode1()
 				self.interest -= 1
 		else : 
-			self.interest += 2
-			
-		print (ansBob.id)
+			self.interest = 0
 		
 		if ansBob.id > 9 : #that means it's a mode2 or mode3 answer
 			self.prevChoices.append(ansBob.id)
 			if len(self.prevChoices) > 20 :
 				del self.prevChoices[0]
-		print("prevchoices = " + str(self.prevChoices))
 		return ansBob
 	
 	def ansMode1(self) :
@@ -88,7 +84,7 @@ class Bob:
 					ansList.append(ans)
 			#Removing the previous answers in order to avoid repetition
 			ansList = [ans for ans in ansList if ans.id not in self.prevChoices]
-			print("ansList = " + str(ansList))
+			#print("ansList = " + str(ansList))
 			if len(ansList) == 0 :
 				return Answer("Error : shouldn't be displayed", -1)
 			return ansList[random.randint(0, len(ansList)-1)]
@@ -119,6 +115,7 @@ class Bob:
 				ansBob = self.miniMode2(ansWords, "purposeGov.txt")
 			elif lastChoice == 231 :
 				if self.checkYesNo(ansWords) > 1 :
+					self.sympathy -= 1
 					ansBob = Answer("Well then, try to prove me Earth is round!", 233)
 				elif self.checkYesNo(ansWords) < -1 :
 					ansBob = self.approve()
@@ -126,13 +123,27 @@ class Bob:
 					ansBob = self.askYesOrNo();
 			elif lastChoice == 233 :
 				ansBob = self.miniMode2(ansWords, "proveRoundEarth.txt")
+			elif lastChoice == 22 or lastChoice == 30 or lastChoice == 51 or lastChoice == 62 or lastChoice == 630 or lastChoice == 620 or lastChoice == 83 or lastChoice == 90 or lastChoice == 112 or lastChoice == 114 or lastChoice == 193 or lastChoice == 223 :
+				if self.checkYesNo(ansWords) > 1 :
+					ansBob = self.approve()
+				elif self.checkYesNo(ansWords) < -1 :
+					ansBob = self.disapprove()
+				else :
+					ansBob = self.askYesOrNo();
+			elif lastChoice == 20 or lastChoice == 23 or lastChoice == 32 or lastChoice == 40 or lastChoice == 42 or lastChoice == 46 or lastChoice == 50 or lastChoice == 51 or lastChoice == 80 or lastChoice == 191 or lastChoice == 201 or lastChoice == 221 :
+				if self.checkYesNo(ansWords) > 1 :
+					ansBob = self.disapprove()
+				elif self.checkYesNo(ansWords) < -1 :
+					ansBob = self.approve()
+				else :
+					ansBob = self.askYesOrNo();
 			
 		if self.interest <= -5 :
-			return Answer("Bob : Hm, it's getting late, I should leave.\n * Bob left the conversation because he got bored *", -2)
+			return Answer("Hm, it's getting late, I should leave.\n * Bob left the conversation because he got bored *", -2)
 		if self.stress >= 5 :
-			return Answer("Bob : Yeah hm... I think it's time for me to got to... the swimming pool... in order to... walk my pony or something like that...\n * Bob ran away from you, convinced you are from the NSA *", -3)
+			return Answer("Yeah hm... I think it's time for me to go to... the swimming pool... in order to... walk my pony or something like that...\n * Bob ran away from you, convinced you are from the NSA *", -3)
 		if self.sympathy <= -5 :
-			return Answer("Bob : Well this conversation was... interesting, but maybe you're too young to plainly understand these subjects.\n * Bob left the conversation because you have been too annoying to him *", -4)
+			return Answer("Well this conversation was... interesting, but maybe you're too young to plainly understand these subjects.\n * Bob left the conversation because you have been too annoying to him *", -4)
 			
 		return ansBob
 		
@@ -156,7 +167,7 @@ class Bob:
 			0 : "So... is that a yes or a no?",
 			1 : "You seem to hesitate...",
 			2 : "So what would you say in conclusion?"
-		}
+		}[choice]
 		return Answer(str, choice+1000)
 		
 	def askPrecision(self) :
@@ -165,7 +176,7 @@ class Bob:
 			0 : "So what's your point?",
 			1 : "Okay, continue...",
 			2 : "And what does it mean according to you?"
-		}
+		}[choice]
 		return Answer(str, choice+1005)
 		
 	def approve(self) :
@@ -175,23 +186,24 @@ class Bob:
 			1 : "I think you're right on that point.",
 			2 : "At least one thing we agree on!",
 			3 : "That's also what I think."
-		}
+		}[choice]
 		self.sympathy += 1
 		return Answer(str, choice+1010)
 		
 	def disapprove(self) :
-		choice = random.randint(0, 3)
+		choice = random.randint(0, 4)
 		str = {
 			0 : "I hope one day you will understand.",
 			1 : "Oh god, no offense but you've been completely brainwashed.",
 			2 : "Have you ever really thought about it? Or are you just repeating what you've learned?",
-			3 : "Maybe you should think again about that."
-		}
+			3 : "Maybe you should think again about that.",
+			4 : "I'm sad to hear that. Sad for you."
+		}[choice]
 		self.sympathy -= 1
 		return Answer(str, choice+1015)
 				
 	#This type of method returns a positive number if it thinks the idea is present in the sentence.
-	def checkStunned(ansWords) :
+	def checkStunned(self, ansWords) :
 		score = 0
 		for iWord in range(len(ansWords)):
 			if ansWords[iWord] == "why" :
@@ -212,7 +224,7 @@ class Bob:
 		return score/len(ansWords)
 		
 	# Returns a positive number if it thinks it's a yes, returns a negative if it thinks it's a no.
-	def checkYesNo(ansWords) :
+	def checkYesNo(self, ansWords) :
 		score = 0
 		for iWord in range(len(ansWords)):
 			if ansWords[iWord] == "yes" or ansWords[iWord] == "yep" or ansWords[iWord] == "yeah" :

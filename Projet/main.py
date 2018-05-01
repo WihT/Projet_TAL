@@ -22,10 +22,10 @@ print("Bob : Hi I'm Bob! What could we talk about?")
 
 while True:
 	answer = bob.respond(input("You : "), subjects)
+	#print(subjects)
+	print(bob)
 	print("Bob : " + str(answer))
 	if  answer.id < 0 :
 		break
-	#print(subjects)
 	for subj in subjects :
 		subj.decrement()
-	#print(subjects)

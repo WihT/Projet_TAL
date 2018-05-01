@@ -1,6 +1,7 @@
 1
 
 family
+family_
 child
 children
 father
@@ -158,6 +159,7 @@ underground
 fossil
 scale
 cold blood
+cold blooded
 
 You wouldn't believe all the things that are living in the undergrounds of our own planet...
 Have you ever wondered if someone in front of you was a reptilian?
@@ -174,7 +176,6 @@ turtle
 tortoise
 iguana
 dinosaur
-cold blood
 
 You seem to like reptiles, don't you?
 By the way, reptiles are way more evolved than people think.
@@ -184,6 +185,7 @@ Do you think reptiles are exceptional animals?
 8
 
 animal
+charlie
 dog
 cat
 cow
@@ -207,6 +209,8 @@ rat
 rabit
 rodent
 pig
+pony
+charlie
 
 Do you think we really are the dominant species on our planet?
 What is your opinion about experiments on animals?
@@ -281,8 +285,6 @@ world trade center
 twin tower
 9 11
 pentagon
-terrorist
-attack
 inside job
 tchernobyl
 nuclear
@@ -298,11 +300,8 @@ Something is a little shady, isn't it?
 12
 
 logic
-but
 thus
-so
 since
-if
 then
 conclusion
 conclude
@@ -361,10 +360,10 @@ But you know, numbers can lie too...
 That's a very formated reasoning.
 Sorry, maths aren't my thing...
 Do you think maths are taught the right way to people?
-Do you think maths hide the truth?
+Do you think maths hide some fundamental truth?
 
 
-15
+15		|1|0
 
 you1
 are you
@@ -378,6 +377,7 @@ like you
 love you
 your favorite
 your name
+about you
 
 Haha, I'm not such an interesting guy. Let's talk about what's going on in this world!
 There's really not much to say about me, maybe we'd rather talk about something else?
@@ -391,6 +391,7 @@ according to you
 your opinion
 your mind
 your theory
+about you
 
 I don't know... what about you?
 Maybe I will tell you, but first I would like to hear your opinion.
@@ -407,12 +408,19 @@ strontium
 barium
 geoengineering
 cloudbuster
-cloud
 plane
 aircraft
 weather
 wilhelm reich
 solar radiation
+sun
+sunny
+cloud
+cloudy
+rain
+rainy
+wind
+windy
 
 Can you imagine what would do a government able to control weather?
 Just one piece of advice: don't go outside when you see lots of contrails in the sky.
@@ -578,6 +586,7 @@ Do you see yourself as a product of education?
 21
 
 computing
+>agency
 computer
 compute
 screen
@@ -593,7 +602,7 @@ mouse
 keyboard
 trackpad
 battery
-it
+i t
 information technology
 tracker
 hacker
@@ -637,10 +646,8 @@ tor
 darkweb
 deepweb
 
-They know everything from you with your online researches...
 Beware of what you search on the Internet!
 You know that if you do something illegal they will know it...
-Maybe they are watching our conversation.
 Do you know how to be invisible on the net?
 Major web companies control our governments. Did you know that?
 
@@ -672,11 +679,11 @@ runny nose
 treatment
 graft
 
-Some people think there are nano robots in vaccine to control people. What is your opinion?
+Some people think there are nano robots in vaccines to control people. What is your opinion?
 Do you think vaccines are really effective?
-If I tell you medicine, what do you think?
+You know, doctors are just people working for the government...
 Don't you think modern medicine is just about manipulating people?
-What if pharmaceutical industry provoke diseases in order to sell meds?
+What if pharmaceutical industry provokes diseases in order to sell meds?
 Do you know that most of meds are just placebo?
 
 
@@ -708,3 +715,25 @@ compass
 Have you ever watched the sky with a telescope?
 Some people think that the Earth is round, are you part of them?
 I think that the round earth theory is part of the government's plan to influence people.
+
+
+24		|2|0
+
+agency
+>animals
+>chemtrail
+>terrorism
+nsa
+n s a
+fbi
+f b i
+cia
+c i a
+watch
+overwatch
+surveil
+surveillance
+
+Shh... they could be spying on us right right now... haha, just kidding!
+Haha yeah sure... did I ever told you about my pony? His name is Charlie.
+The weather is great, isn't it? Let's talk about weather!

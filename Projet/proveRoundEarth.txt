@@ -36,12 +36,14 @@ Have you ever heard of Photoshop?
 94
 
 magnetic
-compass
+magnetism
+compass_
+pole
 
 The explanation is very simple : one pole is the center of the disk, the other one is its perimeter.
 
 
-95
+95		|0|-2
 
 nonsense
 illogical

@@ -77,6 +77,9 @@ class LexField:
 				for wLex in subjects[iLex].keyWords :
 					if LexField.matchLex(ansWords[iWord], wLex) :
 						subjects[iLex].increment(1, subjects)
+						if subjects[iLex].influence != [] :
+							incrInfl[0] += subjects[iLex].influence[0]
+							incrInfl[1] += subjects[iLex].influence[1]
 				for gLex in subjects[iLex].keyGroups :
 					if iWord + len(gLex) <= len(ansWords) :
 						i = 0

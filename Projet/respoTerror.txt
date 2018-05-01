@@ -1,4 +1,4 @@
-80
+80		|0|-2
 
 terrorism
 villain
@@ -24,7 +24,7 @@ society
 Well, you make a point. It's always difficult to see who's the one really responsible.
 
 
-82
+82		|0|2
 
 government
 authorities
@@ -34,6 +34,8 @@ foreign policy
 inside job
 manipulate
 manipulation
+petrol
+greed
 
 Exactly. No need for terrorists, our governments already are terrible enough by themselves!
 
@@ -50,11 +52,11 @@ me
 Yeah kind of, but you know, we are just tools of a system...
 
 
-84
+84		|0|2
 
 alien
 reptilian
 illuminati
 extraterrestrial
 
-I was afraid to say it, but yes, that's also what I think.
+I was afraid to say it, but that's also one of my hypotheses.

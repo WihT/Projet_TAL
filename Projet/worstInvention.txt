@@ -1,4 +1,4 @@
-50
+50|0|1
 
 weapon
 bomb
@@ -15,7 +15,7 @@ terrorism
 Yes, I agree that's terrible. But I was thinking of something more subtle...
 
 
-51
+51		|0|1
 
 computer
 phone
@@ -27,7 +27,7 @@ internet
 I don't like these things either. Probably all infected by the NSA...
 
 
-52
+52		|0|1
 
 money
 dollar
@@ -37,7 +37,7 @@ credit card
 I know, right? By the way, what do you think is the real purpose of money?
 
 
-53
+53		|0|2
 
 government
 state
@@ -46,11 +46,13 @@ authority
 police
 prison
 jail
+privation
+freedom privation
 
 I totally agree on that. Do you know why governments exist?
 
 
-54
+54		|0|1
 
 shoa
 nazism
@@ -64,7 +66,7 @@ death camp
 Yes, I guess it is. If only we could say and it wouldn't happen ever again...
 
 
-55
+55		|0|1
 
 school
 education
@@ -73,7 +75,7 @@ schooling
 Well, I wish it had been invented... differently.
 
 
-56
+56		|0|2
 
 industry
 work
@@ -84,7 +86,7 @@ company
 Which is basically enslavement, I totally agree on that.
 
 
-57
+57		|0|1
 
 slavery
 slave
@@ -95,16 +97,16 @@ forced labor
 Of course. But you know, modern economy isn't much better.
 
 
-58
+58		|2|-2
 
 freedom
 liberty
 equality
 
-Wait... are you working for... some agency?
+Well that was an... unexpected answer.
 
 
-59
+59		|0|0
 
 discrimination
 racism
