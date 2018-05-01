@@ -8,8 +8,9 @@ class LexField:
 	def __init__(self, content):
 		paragraphs = content.split("\n\n")
 		if "|" in paragraphs[0] :
-			numbers = paragraph[0].split("|")
-			self.influence = numbers[1:]
+			numbers = paragraphs[0].split("|")
+			id = int(int(numbers[0]))
+			self.influence = [int(numbers[1]), int(numbers[2])]
 		else :
 			self.influence = []
 			id = int(paragraphs[0])
@@ -67,6 +68,8 @@ class LexField:
 			
 	@staticmethod
 	def updateSubjects(ansWords, subjects) :
+	
+		incrInfl = [0, 0]
 		
 		for iWord in range(len(ansWords)) :
 			ansWords[iWord] = ansWords[iWord].lower()
@@ -81,6 +84,12 @@ class LexField:
 							i += 1
 						if i == len(gLex) :
 							subjects[iLex].increment(1, subjects)
+							if subjects[iLex].influence != [] :
+								incrInfl[0] += subjects[iLex].influence[0]
+								incrInfl[1] += subjects[iLex].influence[1]
+								
+		return incrInfl
+								
 
 	@staticmethod
 	def matchLex(wAns, wLex) :

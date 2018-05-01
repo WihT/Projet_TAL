@@ -2,70 +2,55 @@ import re
 import random
 import math
 from lexicalField import LexField
+from answer import Answer
 
 class Bob:
 	"""Representation of Bob"""
 	
 	
 	def __init__(self):
-		self.sympathy = 0
 		self.stress = 0
 		self.interest = 0
+		self.sympathy = 0
 		#print(str(self))
 		self.prevChoices = []
 		self.choiceMode1 = 0
 		
 	def __str__(self):
-		return str(self.sympathy) + "\n" + str(self.stress) + "\n" + str(self.interest)
+		return str(self.sympathy) + "  ;  " + str(self.stress) + "  ;  " + str(self.interest)
 
 
 	def respond(self, answer, subjects) :
 		if (answer.lower() == "bye") or (answer.lower() == "goodbye") or (answer.lower() == "see you"):
-			print("Bob : See you !")
-			return -1
+			return Answer("See you !", -1)
 			
 		#print("I recognized the word " + wLex + " from lexical \"" + lexicals[iLex][0] + "\"")
 		
 		ansWords = re.split("[ .,'?!/()]+", answer)
 		
-		LexField.updateSubjects(ansWords, subjects)
+		influence = LexField.updateSubjects(ansWords, subjects)
 		
-		choice = self.ansMode3(ansWords, subjects)
-		if  choice == -1 :
-			choice = self.ansMode2(subjects)
-			if choice == -1 :
-				choice = self.ansMode1()
+		self.stress += influence[0]
+		self.sympathy += influence[1]
+		print(self)
+		
+		ansBob = self.ansMode3(ansWords, subjects)
+		if  ansBob.id == -1 :
+			ansBob = self.ansMode2(subjects)
+			if ansBob.id == -1 :
+				ansBob = self.ansMode1()
 				self.interest -= 1
 		else : 
 			self.interest += 2
+			
+		print (ansBob.id)
 		
-		if choice > 9 : #that means it's a mode2 or mode3 choice
-			self.prevChoices.append(choice)
+		if ansBob.id > 9 : #that means it's a mode2 or mode3 answer
+			self.prevChoices.append(ansBob.id)
 			if len(self.prevChoices) > 20 :
 				del self.prevChoices[0]
 		print("prevchoices = " + str(self.prevChoices))
-		return choice
-
-	def askYesOrNo(self) :
-		choice = random.randint(0, 2)
-		str = {
-			0 : "So... is that a yes or a no?",
-			1 : "You seem to hesitate...",
-			2 : "So what would you say in conclusion?"
-		}
-		print ("Bob : " + str)
-		return choice + 1000
-		
-	def askPrecision(self) :
-		choice = random.randint(0, 2)
-		str = {
-			0 : "So what's your point?",
-			1 : "Okay, continue...",
-			2 : "And what does it mean according to you?"
-		}
-		print ("Bob : " + str)
-		return choice + 1003
-		
+		return ansBob
 	
 	def ansMode1(self) :
 		choice = random.randint(0, 4)
@@ -79,9 +64,8 @@ class Bob:
 			4 : "I see...",
 			5 : "Oh really?"
 		}[choice]
-		print ("Bob : " + str)
 		self.choiceMode1 = choice
-		return choice
+		return Answer(str, choice)
 
 
 	def ansMode2(self, subjects) :
@@ -106,63 +90,51 @@ class Bob:
 			ansList = [ans for ans in ansList if ans.id not in self.prevChoices]
 			print("ansList = " + str(ansList))
 			if len(ansList) == 0 :
-				return -1
-			answer = ansList[random.randint(0, len(ansList)-1)]
-			print ("Bob : " + str(answer))
-			return answer.id
+				return Answer("Error : shouldn't be displayed", -1)
+			return ansList[random.randint(0, len(ansList)-1)]
 		else :
-			return -1
+			return Answer("Error : shouldn't be displayed", -1)
 
 
 	def ansMode3(self, ansWords, subjects) :
 		
 		
-		print ("interest = " + str(self.interest))
-		if self.interest <= -5 :
-				print("Bob : Hm, it's getting late, I should leave.")
-				print(" * Bob left the conversation because he got bored *")
-				return -2
+		ansBob = Answer("Error : shouldn't be displayed", -1)
+		
+		if self.prevChoices != [] :
+			
+			lastChoice = self.prevChoices[len(self.prevChoices)-1]
+			if math.floor(lastChoice/10) == 100 :
+				lastChoice = self.prevChoices[len(self.prevChoices)-2]
 				
+			if lastChoice == 41 :
+				ansBob = self.miniMode2(ansWords, "worstInvention.txt")
+			elif lastChoice == 93 :
+				ansBob =  self.miniMode2(ansWords, "purposeMoney.txt")
+			elif lastChoice == 190 :
+				ansBob =  self.miniMode2(ansWords, "respoTerror.txt")
+			elif lastChoice == 200 :
+				ansBob =  self.miniMode2(ansWords, "purposeEdu.txt")
+			elif lastChoice == 24 or lastChoice == 520 :
+				ansBob = self.miniMode2(ansWords, "purposeGov.txt")
+			elif lastChoice == 231 :
+				if self.checkYesNo(ansWords) > 1 :
+					ansBob = Answer("Well then, try to prove me Earth is round!", 233)
+				elif self.checkYesNo(ansWords) < -1 :
+					ansBob = self.approve()
+				else :
+					ansBob = self.askYesOrNo();
+			elif lastChoice == 233 :
+				ansBob = self.miniMode2(ansWords, "proveRoundEarth.txt")
 			
-		if self.prevChoices == [] :
-			return -1
-		lastChoice = self.prevChoices[len(self.prevChoices)-1]
-		
-		if self.stress >= 3 :
-			print("Bob : Wait... are you working for... some agency?")
-			return 580
-			
+		if self.interest <= -5 :
+			return Answer("Bob : Hm, it's getting late, I should leave.\n * Bob left the conversation because he got bored *", -2)
 		if self.stress >= 5 :
-			print("Bob : Yeah hm... I think it's time for me to got to... the swimming pool... in order to... walk my pony or something like that...")
-			print(" * Bob ran away from you, convinced you are from the NSA *")
-			
+			return Answer("Bob : Yeah hm... I think it's time for me to got to... the swimming pool... in order to... walk my pony or something like that...\n * Bob ran away from you, convinced you are from the NSA *", -3)
 		if self.sympathy <= -5 :
-			print("Bob : Well this conversation was... interesting, but maybe you're too young to plainly understand these subjects.")
-			print(" * Bob left the conversation because you have been too annoying to him *")
-		
-		if math.floor(lastChoice/10) == 100 :
-			lastChoice = self.prevChoices[len(self.prevChoices)-2]
+			return Answer("Bob : Well this conversation was... interesting, but maybe you're too young to plainly understand these subjects.\n * Bob left the conversation because you have been too annoying to him *", -4)
 			
-		choice = -1
-		if lastChoice == 41 :
-			choice = self.miniMode2(ansWords, "worstInvention.txt")
-		elif lastChoice == 93 :
-			choice =  self.miniMode2(ansWords, "purposeMoney.txt")
-		elif lastChoice == 190 :
-			choice =  self.miniMode2(ansWords, "respoTerror.txt")
-		elif lastChoice == 200 :
-			choice =  self.miniMode2(ansWords, "purposeEdu.txt")
-		elif lastChoice == 24 or lastChoice == 520 :
-			choice =  self.miniMode2(ansWords, "purposeGov.txt")
-		elif lastChoice == 231 :
-			if checkYesNo(ansWords) > 0 :
-				choice = 233
-				print("Bob : Well then, try to prove me earth is round!")
-			
-		elif lastChoice == 233 :
-			choice =  self.miniMode2(ansWords, "proveRoundEarth.txt")
-			
-		return choice
+		return ansBob
 		
 			
 	def miniMode2(self, ansWords, srcFile) :
@@ -177,62 +149,101 @@ class Bob:
 		LexField.updateSubjects(ansWords, currentSubjects)
 		
 		return self.ansMode2(currentSubjects)
-	
+
+	def askYesOrNo(self) :
+		choice = random.randint(0, 2)
+		str = {
+			0 : "So... is that a yes or a no?",
+			1 : "You seem to hesitate...",
+			2 : "So what would you say in conclusion?"
+		}
+		return Answer(str, choice+1000)
+		
+	def askPrecision(self) :
+		choice = random.randint(0, 2)
+		str = {
+			0 : "So what's your point?",
+			1 : "Okay, continue...",
+			2 : "And what does it mean according to you?"
+		}
+		return Answer(str, choice+1005)
+		
+	def approve(self) :
+		choice = random.randint(0, 3)
+		str = {
+			0 : "I'm glad to see I'm not the only one thinking that way!",
+			1 : "I think you're right on that point.",
+			2 : "At least one thing we agree on!",
+			3 : "That's also what I think."
+		}
+		self.sympathy += 1
+		return Answer(str, choice+1010)
+		
+	def disapprove(self) :
+		choice = random.randint(0, 3)
+		str = {
+			0 : "I hope one day you will understand.",
+			1 : "Oh god, no offense but you've been completely brainwashed.",
+			2 : "Have you ever really thought about it? Or are you just repeating what you've learned?",
+			3 : "Maybe you should think again about that."
+		}
+		self.sympathy -= 1
+		return Answer(str, choice+1015)
 				
-#This type of method returns a positive number if it thinks the idea is present in the sentence.
-def checkStunned(ansWords) :
-	score = 0
-	for iWord in range(len(ansWords)):
-		if ansWords[iWord] == "why" :
-			score += 7 #Magic numbers :D
-		elif ansWords[iWord] == "what" :
-			score += 7
-		elif ansWords[iWord] == "mean" :
-			score += 3
-		elif ansWords[iWord] == "stunned" :
-			score += 3
-		elif ansWords[iWord] == "you" :
-			score += 3
-		elif iWord + 2 <= len(ansWords) :
-			if ansWords[iWord] == "not" and ansWords[iWord+1] == "sure" :
-				score += 5
-		else :
-			score -= 1
-	return score/len(ansWords)
-	
-# Returns a positive number if it thinks it's a yes, returns a negative if it thinks it's a no.
-def checkYesNo(ansWords) :
-	score = 0
-	for iWord in range(len(ansWords)):
-		if ansWords[iWord] == "yes" or ansWords[iWord] == "yep" or ansWords[iWord] == "yeah" :
-			score += 10
-		elif ansWords[iWord] == "no" or ansWords[iWord] == "nope":
-			score -= 10
-		elif ansWords[iWord] == "affirmative" :
-			score += 7
-		elif ansWords[iWord] == "negative" :
-			score -= 7
-		elif ansWords[iWord] == "not" :
-			score -= 3
-			if iWord + 2 <= len(ansWords) and ansWords[iWord+1] == "sure" :
-				return 0
-		elif iWord + 2 <= len(ansWords) :
-			if ansWords[iWord] == "i":
-				if ansWords[iWord+1] == "think" or ansWords[iWord+1] == "guess" or ansWords[iWord+1] == "do" or ansWords[iWord+1] == "am":
-					if iWord + 3 <= len(ansWords) and ansWords[iWord+2] == "not" :
+	#This type of method returns a positive number if it thinks the idea is present in the sentence.
+	def checkStunned(ansWords) :
+		score = 0
+		for iWord in range(len(ansWords)):
+			if ansWords[iWord] == "why" :
+				score += 7 #Magic numbers :D
+			elif ansWords[iWord] == "what" :
+				score += 7
+			elif ansWords[iWord] == "mean" :
+				score += 3
+			elif ansWords[iWord] == "stunned" :
+				score += 3
+			elif ansWords[iWord] == "you" :
+				score += 3
+			elif iWord + 2 <= len(ansWords) :
+				if ansWords[iWord] == "not" and ansWords[iWord+1] == "sure" :
+					score += 5
+			else :
+				score -= 1
+		return score/len(ansWords)
+		
+	# Returns a positive number if it thinks it's a yes, returns a negative if it thinks it's a no.
+	def checkYesNo(ansWords) :
+		score = 0
+		for iWord in range(len(ansWords)):
+			if ansWords[iWord] == "yes" or ansWords[iWord] == "yep" or ansWords[iWord] == "yeah" :
+				score += 10
+			elif ansWords[iWord] == "no" or ansWords[iWord] == "nope":
+				score -= 10
+			elif ansWords[iWord] == "affirmative" :
+				score += 7
+			elif ansWords[iWord] == "negative" :
+				score -= 7
+			elif ansWords[iWord] == "not" :
+				score -= 3
+				if iWord + 2 <= len(ansWords) and ansWords[iWord+1] == "sure" :
+					return 0
+			elif iWord + 2 <= len(ansWords) :
+				if ansWords[iWord] == "i":
+					if ansWords[iWord+1] == "think" or ansWords[iWord+1] == "guess" or ansWords[iWord+1] == "do" or ansWords[iWord+1] == "am":
+						if iWord + 3 <= len(ansWords) and ansWords[iWord+2] == "not" :
+							score -= 7
+						else :
+							score += 5
+					elif iWord + 3 <= len(ansWords) and ansWords[iWord+1] == "don" and ansWords[iWord+2] == "t":
 						score -= 7
+						if iWord + 4 <= len(ansWords) and ansWords[iWord+3] == "know" :
+							return 0
+				elif ansWords[iWord] == "of" and ansWords[iWord+1] == "course" :
+					if iWord + 3 <= len(ansWords) and ansWords[iWord+2] == "not" :
+						score -= 10
 					else :
-						score += 5
-				elif iWord + 3 <= len(ansWords) and ansWords[iWord+1] == "don" and ansWords[iWord+2] == "t":
-					score -= 7
-					if iWord + 4 <= len(ansWords) and ansWords[iWord+3] == "know" :
-						return 0
-			elif ansWords[iWord] == "of" and ansWords[iWord+1] == "course" :
-				if iWord + 3 <= len(ansWords) and ansWords[iWord+2] == "not" :
-					score -= 10
-				else :
-					score += 2
-					score *= 2
-		if ansWords[iWord] == "if" or ansWords[iWord] == "normally" or ansWords[iWord] == "maybe" :
-			score /= 4
-	return score/len(ansWords)
+						score += 2
+						score *= 2
+			if ansWords[iWord] == "if" or ansWords[iWord] == "normally" or ansWords[iWord] == "maybe" :
+				score /= 4
+		return score/len(ansWords)

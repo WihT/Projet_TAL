@@ -1,3 +1,5 @@
+120
+
 protecting
 protection
 protect
@@ -10,7 +12,10 @@ attack
 
 Haha, then it didn't really change since the middle-age.
 
-2	value
+
+121
+
+value
 fraternity
 equality
 liberty
@@ -25,7 +30,10 @@ inculcating
 
 Yeah, I guess they call it "values"... values they use to justify awful things.
 
-3	surveillance
+
+122
+
+surveillance
 a close eye
 watch
 keep tab on
@@ -36,7 +44,10 @@ overwatch
 
 Yes, they are definitely watching over us. But what for?
 
-4	love
+
+123
+
+love
 loving
 kind
 kindly
@@ -47,7 +58,10 @@ take care
 
 Oh, seriously ? Come on, maybe they want us to love them, but we are only tools for them.
 
-5	guide
+
+124		|0|-2
+
+guide
 manage
 organize
 order
@@ -55,9 +69,12 @@ maintain
 discipline
 disciplined
 
-Well people could actually have a radiant life without any government, but I guess it's too late for you.
+Well people could actually have radiant lifes without any government, but I guess it's too late for you.
 
-6	control
+
+125
+
+control
 controlling
 format
 formating
@@ -65,10 +82,16 @@ enslave
 slave
 command
 commanding
+dominate
+dominating
+domination
 
 Well, that's more or less what I was about to say. You're smarter than I thought !
 
-7	alien
+
+126
+
+alien
 reptilian
 illuminati
 extraterrestrial

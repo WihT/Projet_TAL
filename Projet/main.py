@@ -21,8 +21,9 @@ bob = Bob()
 print("Bob : Hi I'm Bob! What could we talk about?")
 
 while True:
-	choice = bob.respond(input("You : "), subjects)
-	if  choice < 0 :
+	answer = bob.respond(input("You : "), subjects)
+	print("Bob : " + str(answer))
+	if  answer.id < 0 :
 		break
 	#print(subjects)
 	for subj in subjects :
