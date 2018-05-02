@@ -31,7 +31,8 @@ class Bob:
 		
 		self.stress += influence[0]
 		self.sympathy += influence[1]
-		print(self)
+		
+		print(self.prevChoices)
 		
 		ansBob = self.ansMode3(ansWords, subjects)
 		if  ansBob.id == -1 :
@@ -46,6 +47,14 @@ class Bob:
 			self.prevChoices.append(ansBob.id)
 			if len(self.prevChoices) > 20 :
 				del self.prevChoices[0]
+				
+		if self.interest <= -5 :
+			return Answer("Hm, it's getting late, I should leave.\n * Bob left the conversation because he got bored *", -2)
+		if self.stress >= 5 :
+			return Answer("Yeah hm... I think it's time for me to go to... the swimming pool... in order to... walk my pony or something like that...\n * Bob ran away from you, convinced you are from the NSA *", -3)
+		if self.sympathy <= -5 :
+			return Answer("Well this conversation was... interesting, but maybe you're too young to plainly understand these subjects.\n * Bob left the conversation because you have been too annoying to him *", -4)
+				
 		return ansBob
 	
 	def ansMode1(self) :
@@ -100,7 +109,7 @@ class Bob:
 		if self.prevChoices != [] :
 			
 			lastChoice = self.prevChoices[len(self.prevChoices)-1]
-			if math.floor(lastChoice/10) == 100 :
+			if math.floor(lastChoice/10)==100 :
 				lastChoice = self.prevChoices[len(self.prevChoices)-2]
 				
 			if lastChoice == 41 :
@@ -120,7 +129,7 @@ class Bob:
 				elif self.checkYesNo(ansWords) < -1 :
 					ansBob = self.approve()
 				else :
-					ansBob = self.askYesOrNo();
+					ansBob = self.askYesOrNo()
 			elif lastChoice == 233 :
 				ansBob = self.miniMode2(ansWords, "proveRoundEarth.txt")
 			elif lastChoice == 22 or lastChoice == 30 or lastChoice == 51 or lastChoice == 62 or lastChoice == 630 or lastChoice == 620 or lastChoice == 83 or lastChoice == 90 or lastChoice == 112 or lastChoice == 114 or lastChoice == 193 or lastChoice == 223 :
@@ -128,22 +137,15 @@ class Bob:
 					ansBob = self.approve()
 				elif self.checkYesNo(ansWords) < -1 :
 					ansBob = self.disapprove()
-				else :
-					ansBob = self.askYesOrNo();
+				elif math.floor(self.prevChoices[len(self.prevChoices)-1]/10)!=100 :
+					ansBob = self.askYesOrNo()
 			elif lastChoice == 20 or lastChoice == 23 or lastChoice == 32 or lastChoice == 40 or lastChoice == 42 or lastChoice == 46 or lastChoice == 50 or lastChoice == 51 or lastChoice == 80 or lastChoice == 191 or lastChoice == 201 or lastChoice == 221 :
 				if self.checkYesNo(ansWords) > 1 :
 					ansBob = self.disapprove()
 				elif self.checkYesNo(ansWords) < -1 :
 					ansBob = self.approve()
-				else :
-					ansBob = self.askYesOrNo();
-			
-		if self.interest <= -5 :
-			return Answer("Hm, it's getting late, I should leave.\n * Bob left the conversation because he got bored *", -2)
-		if self.stress >= 5 :
-			return Answer("Yeah hm... I think it's time for me to go to... the swimming pool... in order to... walk my pony or something like that...\n * Bob ran away from you, convinced you are from the NSA *", -3)
-		if self.sympathy <= -5 :
-			return Answer("Well this conversation was... interesting, but maybe you're too young to plainly understand these subjects.\n * Bob left the conversation because you have been too annoying to him *", -4)
+				elif math.floor(self.prevChoices[len(self.prevChoices)-1]/10)!=100 :
+					ansBob = self.askYesOrNo()
 			
 		return ansBob
 		
@@ -159,7 +161,13 @@ class Bob:
 				
 		LexField.updateSubjects(ansWords, currentSubjects)
 		
-		return self.ansMode2(currentSubjects)
+		ansBob = self.ansMode2(currentSubjects)
+		
+		if ansBob.id==-1 and math.floor(self.prevChoices[len(self.prevChoices)-1]/10)!=100 :
+			return self.askPrecision()
+			
+		return ansBob
+		
 
 	def askYesOrNo(self) :
 		choice = random.randint(0, 2)
@@ -177,7 +185,7 @@ class Bob:
 			1 : "Okay, continue...",
 			2 : "And what does it mean according to you?"
 		}[choice]
-		return Answer(str, choice+1005)
+		return Answer(str, choice+1000)
 		
 	def approve(self) :
 		choice = random.randint(0, 3)
@@ -205,7 +213,7 @@ class Bob:
 	#This type of method returns a positive number if it thinks the idea is present in the sentence.
 	def checkStunned(self, ansWords) :
 		score = 0
-		for iWord in range(len(ansWords)):
+		for iWord in range(len(ansWords)) :
 			if ansWords[iWord] == "why" :
 				score += 7 #Magic numbers :D
 			elif ansWords[iWord] == "what" :
@@ -240,13 +248,13 @@ class Bob:
 				if iWord + 2 <= len(ansWords) and ansWords[iWord+1] == "sure" :
 					return 0
 			elif iWord + 2 <= len(ansWords) :
-				if ansWords[iWord] == "i":
-					if ansWords[iWord+1] == "think" or ansWords[iWord+1] == "guess" or ansWords[iWord+1] == "do" or ansWords[iWord+1] == "am":
+				if ansWords[iWord] == "i" :
+					if ansWords[iWord+1] == "think" or ansWords[iWord+1] == "guess" or ansWords[iWord+1] == "do" or ansWords[iWord+1] == "am" :
 						if iWord + 3 <= len(ansWords) and ansWords[iWord+2] == "not" :
 							score -= 7
 						else :
 							score += 5
-					elif iWord + 3 <= len(ansWords) and ansWords[iWord+1] == "don" and ansWords[iWord+2] == "t":
+					elif iWord + 3 <= len(ansWords) and ansWords[iWord+1] == "don" and ansWords[iWord+2] == "t" :
 						score -= 7
 						if iWord + 4 <= len(ansWords) and ansWords[iWord+3] == "know" :
 							return 0

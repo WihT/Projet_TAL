@@ -310,8 +310,6 @@ evidence
 proof
 prove
 proving
-thinking
-think
 that is_ why
 that s_ why
 otherwise
@@ -367,6 +365,8 @@ Do you think maths hide some fundamental truth?
 
 you1
 are you
+you are
+you re
 have you
 you have
 you may
@@ -377,6 +377,7 @@ like you
 love you
 your favorite
 your name
+your life
 about you
 
 Haha, I'm not such an interesting guy. Let's talk about what's going on in this world!
