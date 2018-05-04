@@ -8,12 +8,13 @@ class Bob:
 	"""Representation of Bob"""
 	
 	
-	def __init__(self):
+	def __init__(self, modeChoice):
 		self.interest = 0
 		self.stress = 0
 		self.sympathy = 0
 		self.prevChoices = []
 		self.choiceMode1 = 0
+		self.maxMode = modeChoice
 		
 	def __str__(self):
 		return "interest = " + str(self.interest) + " ;  stress = " + str(self.stress) + " ;  sympathy = " + str(self.sympathy)
@@ -25,18 +26,23 @@ class Bob:
 			
 		#print("I recognized the word " + wLex + " from lexical \"" + lexicals[iLex][0] + "\"")
 		
-		ansWords = re.split("[ .,'?!/()]+", answer)
+		if self.maxMode > 1 :
+			ansWords = re.split("[ .,'?!/()]+", answer)
+			influence = LexField.updateSubjects(ansWords, subjects)
+			self.stress += influence[0]
+			self.sympathy += influence[1]
+			#print(self.prevChoices)
 		
-		influence = LexField.updateSubjects(ansWords, subjects)
+		if self.maxMode == 3 :
+			ansBob = self.ansMode3(ansWords, subjects)
+		else :
+			ansBob = Answer("Error : shouldn't be displayed", -1)
 		
-		self.stress += influence[0]
-		self.sympathy += influence[1]
-		
-		print(self.prevChoices)
-		
-		ansBob = self.ansMode3(ansWords, subjects)
 		if  ansBob.id == -1 :
-			ansBob = self.ansMode2(subjects)
+			if self.maxMode > 1 :
+				ansBob = self.ansMode2(subjects)
+			else :
+				ansBob = Answer("Error : shouldn't be displayed", -1)
 			if ansBob.id == -1 :
 				ansBob = self.ansMode1()
 				self.interest -= 1
@@ -47,13 +53,14 @@ class Bob:
 			self.prevChoices.append(ansBob.id)
 			if len(self.prevChoices) > 20 :
 				del self.prevChoices[0]
-				
-		if self.interest <= -5 :
-			return Answer("Hm, it's getting late, I should leave.\n * Bob left the conversation because he got bored *", -2)
-		if self.stress >= 5 :
-			return Answer("Yeah hm... I think it's time for me to go to... the swimming pool... in order to... walk my pony or something like that...\n * Bob ran away from you, convinced you are from the NSA *", -3)
-		if self.sympathy <= -5 :
-			return Answer("Well this conversation was... interesting, but maybe you're too young to plainly understand these subjects.\n * Bob left the conversation because you have been too annoying to him *", -4)
+		
+		if self.maxMode == 3 :
+			if self.interest <= -5 :
+				return Answer("Hm, it's getting late, I should leave.\n * Bob left the conversation because he got bored *", -2)
+			if self.stress >= 5 :
+				return Answer("Yeah hm... I think it's time for me to go to... the swimming pool... in order to... walk my pony or something like that...\n * Bob ran away from you, convinced you are from the NSA *", -3)
+			if self.sympathy <= -5 :
+				return Answer("Well this conversation was... interesting, but maybe you're too young to plainly understand these subjects.\n * Bob left the conversation because you have been too annoying to him *", -4)
 				
 		return ansBob
 	

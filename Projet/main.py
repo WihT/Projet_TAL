@@ -16,8 +16,20 @@ with open("lexFields.txt","r") as filepointer :
 		subjects.append(LexField(lex))
 		
 LexField.linkParents(subjects)
-modeChoice = input("Please choose the mode you want to use:")		
-bob = Bob()
+
+while True :
+	try :
+		modeChoice = int(input("Please choose the mode you want to use : "))
+	except ValueError :
+		modeChoice = 0
+	if modeChoice > 3 or modeChoice < 1 :
+		print("Error : please enter 1, 2 or 3")
+	else :
+		break
+		
+
+bob = Bob(modeChoice)
+		
 print("Bob : Hi I'm Bob! What could we talk about?")
 
 while True:
