@@ -1,4 +1,4 @@
-\documentclass[paper=a4, fontsize=11pt]{article}
+\documentclass[paper=a4, 12pt]{report}
 
 \usepackage[margin=0.9in]{geometry} % margin size
 
@@ -57,27 +57,57 @@
 \date{05 Mai 2018}
 \maketitle
 
-\section{Objectif du projet}
-Le projet a pour but la création d'un chatbot communiquant en anglais ou en français. \\
+\section{Introduction}
+\vspace{0.5cm}
+Bob est un chatbot conspirationniste ne communiquant qu’en anglais, qui pense que les diverses théories du complot sont vraies. Quelque soit le sujet de la conversation, il essaiera de l’orienter vers une de ces théories, afin d’exposer son point de vue à l’utilisateur. Il montre une attitude sceptique, voire condescendante, face aux réponses de l’utilisateur, qu’il juge “trop formatées”. Il peut également paniquer si il pense que l’utilisateur est au centre d’une de ces théories (par exemple s’il croit être face à un reptilien), ou quitter la conversation si il s’ennuie (car on ne parle pas assez de sujet qui l’intéressent) ou encore si il trouve l’utilisateur trop “contrariant”, ne croyant pas à ses théories.
 
-Le chatbot devra avoir 3 modes :
-\begin{itemize}
-\item Le premier correspond à des réponses de type \og uh huh\fg ou \og hum\fg
-\item Le deuxième correspond à des réponses semblable au bot Eliza
-\item Le troisième est \og libre\fg, c'est dans ce mode que s'illustre la spécificité du chatbot créé
-\end{itemize}
+\section{Objectif du projet et motivations}
+\vspace{0.5cm}
+Notre but en choisissant ce thème n’est pas de propager des théories du complots, mais au contraire de les tourner en dérision en les faisant défendre par un programme qui ne “comprend” pas vraiment ce qu’il dit. On a aussi pensé que ce thème serait amusant et donnerait lieu à des conversations atypiques avec l’utilisateur.
 
 \vspace{0.5cm}
 
-Notre chatbot aura pour spécificité de \textbf{croire aux théories du complot}, ainsi lorsque l'utilisateur discutera avec lui, \og Bob\fg notre chatbot orientera la discussion vers ces théories.
-De même, il se pourra que Bob pense que vous êtes au coeur de la théorie (par exemple que vous êtes un reptilien) et fuira.
+Cela a également amélioré nos compétences en Python et nous a appris le Latex. Nous n’avons en revanche pas eu beaucoup d’informations sur ce qui est considéré comme de “bonnes pratiques” en Python, et avons seulement une meilleure idée de comment faire du code fonctionnel dans ce langage.
 
-\section{Motivations pour le projet}
-La raison pour laquelle nous avons décidé d'opter pour un chatbot persuadé que les théories du complot sont vraies est que nous avons pensé que cela pourrait être drôle. En effet, le fait que notre chatbot y croit pourrait faire en sorte que des discussions drôles puissent survenir. 
+\vspace{0.5cm}
 
-\section{Fonctionnement et limites du projet}
+Enfin, ce projet nous aura enfin permis de nous intéresser à un nouveau type de programme, en appliquant ce que nous avons vu en cours mais aussi en nous laissant une certaine liberté, aussi bien dans le thème de chatbot que dans son fonctionnement.
+
+
+\section{Fonctionnement du projet}
+\vspace{0.5cm}
+Comme demandé, le code a été organisé en 3 modes, correspondant aux méthodes ansBob1, ansBob2 et ansBob3.
+
+\vspace{0.5cm}
+
+Mode 1 : Bob  envoie des réponses comme “hmm…” ou “interesting…”, laissant penser qu’il prête attention à ce que l’utilisateur dit.
+
+\vspace{0.5cm}
+
+Mode 2 : Bob se sert d’un tableau “subjects”, contenant une valeur réelle positive pour chaque sujet de conversation possible. La plus haute de ces valeurs correspond au sujet que Bob estime être le plus pertinent, en fonction des mots entrés par l’utilisateur dernièrement. Il pose ainsi des questions ou fait des remarques sur ces sujets afin d’alimenter la conversation, à la façon d’Elizia, à part que ses répliques ne visent pas à faire parler l’utilisateur de lui, mais de ce qu’il pense sur divers sujets.
+
+\vspace{0.5cm}
+
+Mode 3 : On vérifie un ensemble de critères sur le tableau “subjects”, mais aussi sur l’humeur de Bob et on fait des vérifications plus précises sur la dernière phrase entrée par l’utilisateur. On prend également parfois en compte la dernière question posée par Bob, afin qu’il sache que l’utilisateur répondait à l’une de ses questions. Il peut alors envoyer des phrases plus cohérentes avec le contexte.
+
+\vspace{0.5cm}
+
+Classes :
+Main.py : Sert d’interface pour pouvoir interagir avec Bob
+Bob : Regroupe toutes les fonctionnalités propres à Bob, telles que les mode 1, 2 et 3, ou encore la gestion des émotions.
+LexField : regroupe tout ce qui touche à la gestion des champs lexicaux : reconnaître si un mot y appartient, fournir des réponses génériques…
+Answer : consistant en une chaîne et un ID, a été créée pour rendre le code plus maintenable. En effet, quand on modifie un détail de formulation ou d’orthographe dans une réponse, pas besoin de la modifier partout : seul son ID est comparé avec celui d’autres réponses.
+
+\vspace{0.5cm}
+
+Fonctionnement de LexField :
+Les champs lexicaux sont regroupés en fichiers, contenant à la fois les mots, les groupes de mots, les réponses, les “influences” sur Bob et les liens avec les autres champs. Un mot peut faire partie de plusieurs champs lexicaux, mais on préfère généralement le mettre dans un minimum de champs lexicaux puis utiliser les liens de parenté
 
 
 \section{Contributions des membres au projet}
+\vspace{0.5cm}
+Florent a principalement contribué au développement du code du chatbot. Ainsi, il aura d’avantage travaillé sur les modes 2 et 3 du programme, Thibaut, quant à lui, a créé le mode 1 et a contribué au code au début du projet. \\
+Thibaut s’est ensuite principalement occupé du rapport et de la maîtrise du latex, et a grandement participé au contenu des fichiers de champs lexicaux.
+
 
 \end{document}
