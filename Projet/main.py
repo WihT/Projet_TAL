@@ -16,7 +16,7 @@ with open("lexFields.txt","r") as filepointer :
 		subjects.append(LexField(lex))
 		
 LexField.linkParents(subjects)
-		
+modeChoice = input("Please choose the mode you want to use:")		
 bob = Bob()
 print("Bob : Hi I'm Bob! What could we talk about?")
 
