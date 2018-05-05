@@ -27,9 +27,7 @@ Well, you make a point. It's always difficult to see who's the one really respon
 82		|0|2
 
 government
-authorities
-state
-country
+authorities_
 foreign policy
 inside job
 manipulate

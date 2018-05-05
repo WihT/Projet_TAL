@@ -139,7 +139,11 @@ class Bob:
 					ansBob = self.askYesOrNo()
 			elif lastChoice == 233 :
 				ansBob = self.miniMode2(ansWords, "proveRoundEarth.txt")
-			elif lastChoice == 22 or lastChoice == 30 or lastChoice == 51 or lastChoice == 62 or lastChoice == 630 or lastChoice == 620 or lastChoice == 83 or lastChoice == 90 or lastChoice == 112 or lastChoice == 114 or lastChoice == 193 or lastChoice == 223 :
+			elif lastChoice == 90 and self.checkStunned(ansWords) > 1 :
+				ansBob = Answer("Well, it's quite obvious to me. In your mind, what is the purpose of money?", 93)
+			elif lastChoice == 193 and self.checkStunned(ansWords) > 1 :
+				ansBob = Answer("Let's put it that way : who do you think is the real responsible for terrorism?", 190)
+			elif lastChoice == 22 or lastChoice == 30 or lastChoice == 51 or lastChoice == 62 or lastChoice == 630 or lastChoice == 620 or lastChoice == 83 or lastChoice == 90 or lastChoice == 91 or lastChoice == 112 or lastChoice == 114 or lastChoice == 193 or lastChoice == 223 :
 				if self.checkYesNo(ansWords) > 1 :
 					ansBob = self.approve()
 				elif self.checkYesNo(ansWords) < -1 :
@@ -166,10 +170,14 @@ class Bob:
 			for lex in tmp :
 				currentSubjects.append(LexField(lex))
 				
-		LexField.updateSubjects(ansWords, currentSubjects)
+		influence = LexField.updateSubjects(ansWords, currentSubjects)
+		self.stress += influence[0]
+		self.sympathy += influence[1]
 		
 		ansBob = self.ansMode2(currentSubjects)
 		
+		# When the response of the user isn't clear enough to Bob,
+		# He asks for precisions once, and then abandons if it's still not clear enough.
 		if ansBob.id==-1 and math.floor(self.prevChoices[len(self.prevChoices)-1]/10)!=100 :
 			return self.askPrecision()
 			
@@ -217,25 +225,29 @@ class Bob:
 		self.sympathy -= 1
 		return Answer(str, choice+1015)
 				
-	#This type of method returns a positive number if it thinks the idea is present in the sentence.
+	#This method try to find out whether the user is stunned or not.
 	def checkStunned(self, ansWords) :
 		score = 0
 		for iWord in range(len(ansWords)) :
-			if ansWords[iWord] == "why" :
-				score += 7 #Magic numbers :D
-			elif ansWords[iWord] == "what" :
-				score += 7
-			elif ansWords[iWord] == "mean" :
-				score += 3
+			if ansWords[iWord] == "why" or ansWords[iWord] == "what" :
+				score += 8 #Magic numbers :D
+			elif ansWords[iWord] == "how" :
+				score += 6
+			elif ansWords[iWord] == "mean" or ansWords[iWord] == "meaning":
+				score += 4
 			elif ansWords[iWord] == "stunned" :
-				score += 3
-			elif ansWords[iWord] == "you" :
-				score += 3
+				score += 4
+			elif ansWords[iWord] == "sorry" :
+				score += 4
+			elif ansWords[iWord] == "understand" :
+				score += 4
 			elif iWord + 2 <= len(ansWords) :
 				if ansWords[iWord] == "not" and ansWords[iWord+1] == "sure" :
-					score += 5
-			else :
-				score -= 1
+					score += 6
+				if ansWords[iWord] == "nt" and ansWords[iWord+1] == "know" :
+					score += 6
+				elif ansWords[iWord] == "get" and (ansWords[iWord+1] == "it" or ansWords[iWord+1] == "that")  :
+					score += 6
 		return score/len(ansWords)
 		
 	# Returns a positive number if it thinks it's a yes, returns a negative if it thinks it's a no.

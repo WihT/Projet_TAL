@@ -118,7 +118,7 @@ study
 guinea pig
 
 Do you think science is always a good thing?
-What would you say is the worst invention of humanity ?
+What would you say is the worst invention of humanity?
 Do you always believe what scientists say?
 In your opinion does science have the truth?
 Do you think that science can be controlled and harmless?
@@ -142,6 +142,7 @@ abducted
 abduction
 roswell
 area 51
+51 area
 
 I don't think we are alone in this universe. Do you?
 Do you think there are extraterrestrials living within human society?
@@ -241,7 +242,7 @@ materialist
 materialistic
 
 Anyway, money is just a political thing, isn't it?
-Don't you think this society attach too much importance to money?
+Don't you think this society attaches too much importance to money?
 Do you consider yourself to be a materialistic person?
 What do you think money has been invented for?
 
@@ -664,7 +665,7 @@ flu
 cold
 symptom
 headache
-stomach ache
+ache
 hospital
 vaccination
 inoculation

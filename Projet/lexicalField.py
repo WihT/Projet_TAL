@@ -11,6 +11,7 @@ class LexField:
 			numbers = paragraphs[0].split("|")
 			id = int(int(numbers[0]))
 			self.influence = [int(numbers[1]), int(numbers[2])]
+			print("influence = " + str(self.influence))
 		else :
 			self.influence = []
 			id = int(paragraphs[0])
