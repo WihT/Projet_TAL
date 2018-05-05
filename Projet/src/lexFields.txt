@@ -1,0 +1,741 @@
+1
+
+family
+family_
+child
+children
+father
+daddy
+dad
+mother
+mommy
+mom
+husband
+wife
+brother
+sister
+son
+daughter
+parents
+parent
+aunt
+uncle
+nephew
+niece
+cousin
+
+Do you think family is important?
+Have you ever lost someone?
+Have you ever had issues with your parents?
+Do you consider being parent as an ungrateful job?
+
+
+2
+
+authority
+>conspiracy
+state
+country
+police
+policeman
+policemen
+cop
+arrested
+arrest
+prison
+jail
+army
+soldier
+officer
+pentagon
+detective
+weapon
+president
+king
+queen
+minister
+government
+white house
+federal
+
+Do you think the government always tells us the truth?
+Have you ever had issues with authorities?
+Don't you think the government hides us something?
+Do you think the government is our friend?
+In your opinion, what is the first purpose of a government?
+
+
+3
+
+history
+>education
+historic
+historian
+king
+queen
+kingdom
+cavemen
+fossil
+discovery
+revolution
+country
+heritage
+war
+battle
+enemy
+ally_
+allies_
+
+You know most of the history as we know it is pure invention, right?
+What's your opinion about history in general?
+Do you always believe what historians say?
+You know what they say: history is written by the victors.
+
+
+4
+
+science
+>biohazard
+>medicine
+scientist
+laboratory
+lab
+experiment
+drug
+doctor
+theory
+theoretic
+energy
+evolve
+evolved
+evolution
+discovery
+breakthrough
+break through
+invention
+innovation
+study
+guinea pig
+
+Do you think science is always a good thing?
+What would you say is the worst invention of humanity?
+Do you always believe what scientists say?
+In your opinion does science have the truth?
+Do you think that science can be controlled and harmless?
+
+
+5
+
+alien
+>conspiracy
+extraterrestrial
+planet
+space
+ufo
+unidentified
+flying saucer
+xcom
+unknown
+stranger
+abduct
+abducted
+abduction
+roswell
+area 51
+51 area
+
+I don't think we are alone in this universe. Do you?
+Do you think there are extraterrestrials living within human society?
+I think we are seeing the consequences of things that are not coming from our planet.
+Do you think that alien life is like we imagine it?
+Have you ever seen some strange things in the sky?
+
+
+6
+
+reptilian
+>conspiracy
+buried
+underground
+fossil
+scale
+cold blood
+cold blooded
+
+You wouldn't believe all the things that are living in the undergrounds of our own planet...
+Have you ever wondered if someone in front of you was a reptilian?
+Do you think that reptilians are amongst us?
+
+
+7
+
+reptile
+>reptilian
+>animal
+lizard
+turtle
+tortoise
+iguana
+dinosaur
+
+You seem to like reptiles, don't you?
+By the way, reptiles are way more evolved than people think.
+Do you think reptiles are exceptional animals?
+
+
+8
+
+animal
+charlie
+dog
+cat
+cow
+horse
+bird
+dolphin
+fish
+insect
+bee
+ant
+domesticate
+domesticated
+wild
+feline
+wolf
+lion
+tiger
+mammal
+mouse
+rat
+rabit
+rodent
+pig
+pony
+charlie
+
+Do you think we really are the dominant species on our planet?
+What is your opinion about experiments on animals?
+Do you have a favorite animal?
+Do you believe animals are more intelligent than we think?
+
+
+9
+
+money
+>illuminati
+bank
+currency
+bitcoin
+insurance
+credit
+cost
+pay
+paid
+buy
+buying
+bought
+sell
+selling
+sold
+job
+materialist
+materialistic
+
+Anyway, money is just a political thing, isn't it?
+Don't you think this society attaches too much importance to money?
+Do you consider yourself to be a materialistic person?
+What do you think money has been invented for?
+
+
+10
+
+illuminati
+>conspiracy
+triangle
+pyramid
+eye
+dollar
+symbol
+discordian
+french revolution
+
+Don't you find it strange, all the triangles there are everywhere?
+What if that was somehow linked to the illuminati?
+Have you ever closely watched a dollar bill?
+
+
+11
+
+conspiracy
+conspire
+conspiring
+plot
+plotting
+hidden
+hiding
+hide
+lie
+lied
+lies_
+lying
+truth
+theory
+private
+wtc
+world trade center
+twin tower
+9 11
+pentagon
+inside job
+tchernobyl
+nuclear
+secret
+
+One more thing we are not told the truth about.
+There are lots of existing theories, but what is yours about all of that?
+Looks like someone has something to hide, don't you think?
+Now we are talking! What do you know about that?
+Something is a little shady, isn't it?
+
+
+12
+
+logic
+thus
+since
+then
+conclusion
+conclude
+concluding
+evidence
+proof
+prove
+proving
+that is_ why
+that s_ why
+otherwise
+in that case
+
+That doesn't seem very logical to me...
+Could you explain that?
+An interesting reasoning, but maybe biased.
+You could have been influenced, you know?
+
+
+13
+
+chance
+luck
+luckily_
+probability
+probable
+likely
+coincidence
+statistic
+
+Coincidence? I don't think so...
+Do you believe in fate?
+I don't believe in chance. Everything happens for a reason.
+Do you think that what we get is what we deserve?
+
+
+14
+
+math
+>logic
+>education
+>science
+number
+mathematic
+equation
+statistic
+calculate
+calculation
++
+-
+=
+
+But you know, numbers can lie too...
+That's a very formated reasoning.
+Sorry, maths aren't my thing...
+Do you think maths are taught the right way to people?
+Do you think maths hide some fundamental truth?
+
+
+15		|1|0
+
+you1
+are you
+you are
+you re
+have you
+you have
+you may
+you like
+you love
+you seem
+like you
+love you
+your favorite
+your name
+your life
+about you
+
+Haha, I'm not such an interesting guy. Let's talk about what's going on in this world!
+There's really not much to say about me, maybe we'd rather talk about something else?
+
+
+16
+
+you2
+you think
+according to you
+your opinion
+your mind
+your theory
+about you
+
+I don't know... what about you?
+Maybe I will tell you, but first I would like to hear your opinion.
+
+
+17
+
+chemtrail
+>conspiracy
+contrail
+trail
+aluminium
+strontium
+barium
+geoengineering
+cloudbuster
+plane
+aircraft
+weather
+wilhelm reich
+solar radiation
+sun
+sunny
+cloud
+cloudy
+rain
+rainy
+wind
+windy
+
+Can you imagine what would do a government able to control weather?
+Just one piece of advice: don't go outside when you see lots of contrails in the sky.
+
+
+18
+
+biohazard
+>chemtrail
+>terrorism
+hazard
+toxic
+chemic
+biologic
+substance
+critic level
+radiation
+virus_
+vaccine
+bacteria
+nuclear
+radiation
+weapon
+warfare
+
+Authorities should protect populations against that, instead of encouraging it.
+Have you ever had... unexplained health issues? 
+Maybe we are victims of substances we don't know?
+
+
+19
+
+terrorism
+>conspiracy
+terror
+bomb
+explosion
+explode
+exploding
+sabotage
+isis_
+attack
+target
+targeting
+aqim
+extremism
+radical
+islamism
+fundamentalism
+al quaeda
+iraq
+afghanistan
+iran
+pakistan
+dirty bomb
+enriched
+ammonium nitrate
+improvised explosive device
+ied
+abu sayyaf
+hamas
+farc
+ira
+eta
+basque
+separatist
+hezbollah
+tamil tigers_
+plf
+plo
+car bomb
+jihad
+taliban
+weapon cache
+bomber
+suicide
+suspicious substance
+aqap
+ttp
+pirate
+somalia
+nigeria
+al shabaab
+nationalism
+watchlist_
+watchlists_
+
+In your mind, who is really responsible for terrorism?
+In your opinion, are our governments fighting terrorism efficiently?
+What do you think about the fact that there are more and more terrorist attacks?
+Don't you see that's all a distraction?
+Anyway, most of terrorist attacks are in fact inside jobs.
+
+
+20
+
+education
+educate
+school
+schooling
+learn
+learning
+teach
+teacher
+teaches_
+teaching
+degree
+diploma
+graduate
+elementary
+secondary
+study
+studying
+assessment
+at risk child
+at risk children
+class_
+classes_
+classroom
+exam
+examination
+test
+grade
+textbook
+book
+boarding school
+bully
+cheat
+cheating
+adhd
+cognitive development
+common core
+literacy
+computer science
+geography
+cyberbullying
+discipline
+disciplined
+dyslexia
+educational
+gender segregated
+homework
+literacy
+school
+college
+university
+parental involvement
+mentoring
+counseling
+counselor
+advisor
+portfolio
+uniform
+technology integration
+
+According to you, what is the first purpose of schooling?
+Do you think our education system is efficient?
+It's all about formating people...
+Education is just a massive tool for propaganda.
+Do you see yourself as a product of education?
+
+
+21
+
+computing
+>agency
+computer
+compute
+screen
+code
+language
+cpu
+gpu
+ram
+memory
+hdd
+ssd
+mouse
+keyboard
+trackpad
+battery
+i t
+information technology
+tracker
+hacker
+cracker
+download
+load
+internet
+web
+www
+com
+program
+software
+hardware
+printer
+blue screen
+windows
+linux
+os
+system
+security
+network
+database
+big data
+data
+keychain
+bitcoin
+keyword
+google
+facebook
+twitter
+youtube
+login
+password
+vpn
+lan
+4g
+ping
+virtual reality
+vr
+tor
+darkweb
+deepweb
+
+Beware of what you search on the Internet!
+You know that if you do something illegal they will know it...
+Do you know how to be invisible on the net?
+Major web companies control our governments. Did you know that?
+
+
+22
+
+medicine
+medication
+med
+drugs
+vaccine
+flu
+cold
+symptom
+headache
+ache
+hospital
+vaccination
+inoculation
+virus_
+bacterium
+bacteria
+mycosis
+disease
+sick
+ill
+unwell
+runny nose
+treatment
+graft
+
+Some people think there are nano robots in vaccines to control people. What is your opinion?
+Do you think vaccines are really effective?
+You know, doctors are just people working for the government...
+Don't you think modern medicine is just about manipulating people?
+What if pharmaceutical industry provokes diseases in order to sell meds?
+Do you know that most of meds are just placebo?
+
+
+23
+
+planet
+earth
+flat earth
+star
+sun
+flat
+earth
+ground
+fall
+shadow
+moon
+night
+flip
+upside down
+horizon
+sky
+sea
+ocean
+skyline
+magnetic
+pole
+compass
+
+Have you ever watched the sky with a telescope?
+Some people think that the Earth is round, are you part of them?
+I think that the round earth theory is part of the government's plan to influence people.
+
+
+24		|2|0
+
+agency
+>animals
+>chemtrail
+>terrorism
+nsa
+n s a
+fbi
+f b i
+cia
+c i a
+watch
+overwatch
+surveil
+surveillance
+
+Shh... they could be spying on us right right now... haha, just kidding!
+Haha yeah sure... did I ever told you about my pony? His name is Charlie.
+The weather is great, isn't it? Let's talk about weather!

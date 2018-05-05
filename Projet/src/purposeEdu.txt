@@ -1,0 +1,80 @@
+60		|0|-1
+
+teach
+teaching
+learn
+learning
+logic
+reasoning
+smart
+clever
+responsible
+think by themselves_
+
+Unfortunately, schooling as it exists does quite the opposite...
+
+
+61		|0|-1
+
+value
+fraternity
+equality
+liberty
+common
+core
+patriot
+patriotic
+unite
+united
+good manner
+inculcate
+inculcating
+kindness
+kind
+
+How convenient, huh? Masses of children listening to this propaganda...
+
+
+62		|-1|0
+
+surveillance
+a close eye
+watch
+keep tabs on
+supervise
+oversee
+monitor
+overwatch
+take care
+
+Of course. But that's also a way to watch over their families, don't you think ?
+
+
+63
+
+guide
+manage
+organize
+order
+maintain
+discipline
+disciplined
+learn discipline
+
+And that's a shame, isn't it ?
+
+
+64		|0|1
+
+control
+controlling
+format
+formating
+enslave
+slave
+command
+commanding
+obedient
+obedience
+
+Exactly, it's all about formating. It's good to talk with someone who shares my opinions.
