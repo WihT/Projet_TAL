@@ -56,6 +56,9 @@ queen
 minister
 government
 white house
+macron
+trump
+merkel
 federal
 
 Do you think the government always tells us the truth?
@@ -681,6 +684,7 @@ ill
 unwell
 runny nose
 treatment
+syringe
 graft
 
 Some people think there are nano robots in vaccines to control people. What is your opinion?
@@ -714,7 +718,7 @@ ocean
 skyline
 magnetic
 pole
-compass
+compass_
 
 Have you ever watched the sky with a telescope?
 Some people think that the Earth is round, are you part of them?
@@ -735,7 +739,6 @@ cia
 c i a
 watch
 overwatch
-surveil
 surveillance
 
 Shh... they could be spying on us right right now... haha, just kidding!
