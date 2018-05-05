@@ -1,1 +1,1 @@
-#autorisation des imports
+#allows imports from this folder

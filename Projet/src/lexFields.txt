@@ -101,7 +101,6 @@ scientist
 laboratory
 lab
 experiment
-drug
 doctor
 theory
 theoretic
@@ -224,8 +223,11 @@ Do you believe animals are more intelligent than we think?
 money
 >illuminati
 bank
+euro
 currency
 bitcoin
+coin
+cash
 insurance
 credit
 cost
@@ -659,7 +661,7 @@ Major web companies control our governments. Did you know that?
 medicine
 medication
 med
-drugs
+drug
 vaccine
 flu
 cold

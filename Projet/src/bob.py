@@ -23,15 +23,12 @@ class Bob:
 	def respond(self, answer, subjects) :
 		if (answer.lower() == "bye") or (answer.lower() == "goodbye") or (answer.lower() == "see you"):
 			return Answer("See you !", -1)
-			
-		#print("I recognized the word " + wLex + " from lexical \"" + lexicals[iLex][0] + "\"")
 		
 		if self.maxMode > 1 :
 			ansWords = re.split("[ .,'?!/()]+", answer)
 			influence = LexField.updateSubjects(ansWords, subjects)
 			self.stress += influence[0]
 			self.sympathy += influence[1]
-			#print(self.prevChoices)
 		
 		if self.maxMode == 3 :
 			ansBob = self.ansMode3(ansWords, subjects)
@@ -41,6 +38,8 @@ class Bob:
 		if  ansBob.id == -1 :
 			if self.maxMode > 1 :
 				ansBob = self.ansMode2(subjects)
+				if ansBob.id != -1 :
+					self.interest = 0
 			else :
 				ansBob = Answer("Error : shouldn't be displayed", -1)
 			if ansBob.id == -1 :
@@ -100,7 +99,6 @@ class Bob:
 					ansList.append(ans)
 			#Removing the previous answers in order to avoid repetition
 			ansList = [ans for ans in ansList if ans.id not in self.prevChoices]
-			#print("ansList = " + str(ansList))
 			if len(ansList) == 0 :
 				return Answer("Error : shouldn't be displayed", -1)
 			return ansList[random.randint(0, len(ansList)-1)]
